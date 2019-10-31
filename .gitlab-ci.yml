@@ -1,7 +1,7 @@
 image: python:3.6-alpine
 
 before_script:
-  - apk add pkgconfig gcc zeromq-dev musl-dev
+  - apk add pkgconfig gcc zeromq-dev musl-dev freetype
   - pip install -r requirements.txt
 
 stages:
