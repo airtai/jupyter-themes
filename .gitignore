@@ -50,10 +50,11 @@ Thumbs.db
 # Wheel build folder #
 ######################
 build/
+dist/
 
 # cached python folder #
 ########################
-#__pycache__/
+__pycache__/
 
 # Setuptools distribution folder #
 ##################################
@@ -67,3 +68,5 @@ dist/
 # IDE #
 #######
 .idea/
+
+venv/
