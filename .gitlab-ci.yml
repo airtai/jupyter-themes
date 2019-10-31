@@ -1,4 +1,4 @@
-image: python/3.6-alpine
+image: python:3.6-alpine
 
 before_script:
   - pip install -r requirements.txt
@@ -6,10 +6,10 @@ before_script:
 stages:
   - build
 
-docker build:
+wheel build:
   stage: build
   script:
     python3 setup.py bdist_wheel
   artifacts:
     paths:
-      - dist/
+      - dist/jupyterthemes-0.20.0-py2.py3-none-any.whl
