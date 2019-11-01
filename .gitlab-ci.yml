@@ -1,4 +1,4 @@
-image: 3.7-slim-buster  # python:3.6-alpine
+image: python:3.7-slim-buster  # python:3.6-alpine
 
 #  - apk add pkgconfig gcc zeromq-dev musl-dev freetype
 before_script:
