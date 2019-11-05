@@ -46,6 +46,7 @@ def install_theme(theme=None,
                 hideprompt=False,
                 vimext=False,
                 toolbar=False,
+                logo=None,
                 nbname=False,
                 kernellogo=False,
                 dfonts=False):
@@ -104,6 +105,10 @@ def install_theme(theme=None,
 
     # append mathjax css & script to style_css
     style_css = stylefx.set_mathjax_style(style_css, mathfontsize)
+
+    # set logo if needed
+    if logo is not None:
+        style_css = stylefx.set_logo(wkdir, logo, style_css)
 
     # install style_css to .jupyter/custom/custom.css
     stylefx.write_final_css(style_css)
@@ -245,6 +250,12 @@ def main():
         default=False,
         help="nb name/logo visible")
     parser.add_argument(
+        '-L',
+        "--logo",
+        action='store',
+        default=None,
+        help='set logo (make sure you have -N option set for logo to be visible)')
+    parser.add_argument(
         '-kl',
         "--kernellogo",
         action='store_true',
@@ -309,6 +320,7 @@ def main():
         hideprompt=args.hideprompt,
         vimext=args.vimext,
         toolbar=args.toolbar,
+        logo=args.logo,
         nbname=args.nbname,
         kernellogo=args.kernellogo,
         dfonts=args.defaultfonts)

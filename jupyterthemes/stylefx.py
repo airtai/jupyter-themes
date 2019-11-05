@@ -1,9 +1,13 @@
-import os, sys
-import lesscpy
-from shutil import copyfile, rmtree
-from jupyter_core.paths import jupyter_config_dir, jupyter_data_dir
+import os
+import sys
+import re
 from glob import glob
+from shutil import copyfile
 from tempfile import mkstemp
+
+import lesscpy
+from PIL import Image
+from jupyter_core.paths import jupyter_config_dir, jupyter_data_dir
 
 # path to local site-packages/jupyterthemes
 package_dir = os.path.dirname(os.path.realpath(__file__))
@@ -47,10 +51,11 @@ theme_name_file = os.path.join(jupyter_custom, 'current_theme.txt')
 
 
 def fileOpen(filename, mode):
-    if sys.version_info[0]==3:
+    if sys.version_info[0] == 3:
         return open(filename, mode, encoding='utf8', errors='ignore')
     else:
         return open(filename, mode)
+
 
 def check_directories():
     # Ensure all install dirs exist
@@ -70,11 +75,12 @@ def less_to_css(style_less):
     """ write less-compiled css file to jupyter_customcss in jupyter_dir
     """
     with fileOpen(tempfile, 'w') as f:
-            f.write(style_less)
+        f.write(style_less)
     os.chdir(package_dir)
     style_css = lesscpy.compile(tempfile)
     style_css += '\n\n'
     return style_css
+
 
 def write_final_css(style_css):
     # install style_css to .jupyter/custom/custom.css
@@ -94,6 +100,7 @@ def install_precompiled_theme(theme):
         theme_src = os.path.join(compiled_dir, '{}.css'.format(theme))
     theme_dst = os.path.join(jupyter_custom, 'custom.css')
     copyfile(theme_src, theme_dst)
+
 
 def send_fonts_to_jupyter(font_file_path):
     fname = font_file_path.split(os.sep)[-1]
@@ -135,28 +142,28 @@ def set_font_properties(style_less,
 
     fontsizes = [monosize, nbfontsize, tcfontsize, prfontsize, dffontsize, outfontsize]
     monosize, nbfontsize, tcfontsize, prfontsize, dffontsize, outfontsize = convert_fontsizes(fontsizes)
-    if dfonts==True:
+    if dfonts == True:
         monofont, tcfont, nbfont = ['monospace', 'sans-serif', 'sans-serif']
     else:
         if monofont is not None:
             monofont, monofpath = stored_font_dicts(monofont)
             style_less = import_fonts(style_less, monofont, monofpath)
         else:
-            monofont='monospace'
+            monofont = 'monospace'
         if tcfont is not None:
             tcfont, tcfontpath = stored_font_dicts(tcfont)
             style_less = import_fonts(style_less, tcfont, tcfontpath)
         else:
-            tcfont='sans-serif'
+            tcfont = 'sans-serif'
         if nbfont is not None:
             if nbfont == 'proxima':
-                nbfont, tcfont = ["'Proxima Nova'"]*2
+                nbfont, tcfont = ["'Proxima Nova'"] * 2
                 style_less = proxima_nova_imports(style_less)
             else:
                 nbfont, nbfontpath = stored_font_dicts(nbfont)
                 style_less = import_fonts(style_less, nbfont, nbfontpath)
         else:
-            nbfont='sans-serif'
+            nbfont = 'sans-serif'
 
     style_less += '/* Set Font-Type and Font-Size Variables  */\n'
     # font names and fontfamily info for codecells, notebook & textcells
@@ -256,7 +263,7 @@ def style_layout(style_less,
     promptBorder = '2px solid @prompt-line'
     tcPromptBorder = '2px solid @tc-prompt-std'
     promptMinWidth = 11.5
-    outpromptMinWidth = promptMinWidth # remove + 3 since it will overlay output print() text
+    outpromptMinWidth = promptMinWidth  # remove + 3 since it will overlay output print() text
     tcPromptWidth = promptMinWidth + 3
     tcPromptFontsize = "@prompt-fontsize"
     ccOutputBG = '@cc-output-bg-default'
@@ -355,7 +362,8 @@ def toggle_settings(
             '.CodeMirror-gutters, .cm-s-ipython .CodeMirror-gutters'
             '{ position: absolute; left: 0; top: 0; z-index: 3; width: 2em; '
             'display: inline-block !important; }\n')
-        toggle += ('div.cell.code_cell .input { border-left: 5px solid @cm-gutters !important; border-bottom-left-radius: 5px; border-top-left-radius: 5px; }\n')
+        toggle += (
+            'div.cell.code_cell .input { border-left: 5px solid @cm-gutters !important; border-bottom-left-radius: 5px; border-top-left-radius: 5px; }\n')
     if kernellogo:
         toggle += '@kernel-logo-display: block;'
     else:
@@ -365,7 +373,6 @@ def toggle_settings(
 
 
 def proxima_nova_imports(style_less):
-
     style_less += """@font-face {
         font-family: 'Proxima Nova Bold';
         src: url('fonts/Proxima Nova Alt Bold-webfont.eot');
@@ -418,7 +425,6 @@ def set_mathjax_style(style_css, mathfontsize):
 
     style_css += jax_style
     return style_css
-
 
 
 def set_vim_style(theme):
@@ -517,53 +523,53 @@ def get_alt_prompt_text_color(theme):
 
 def stored_font_dicts(fontcode, get_all=False):
     fonts = {'mono':
-             {'anka': ['Anka/Coder', 'anka-coder'],
-              'anonymous': ['Anonymous Pro', 'anonymous-pro'],
-              'aurulent': ['Aurulent Sans Mono', 'aurulent'],
-              'bitstream': ['Bitstream Vera Sans Mono', 'bitstream-vera'],
-              'bpmono': ['BPmono', 'bpmono'],
-              'code': ['Code New Roman', 'code-new-roman'],
-              'consolamono': ['Consolamono', 'consolamono'],
-              'cousine': ['Cousine', 'cousine'],
-              'dejavu': ['DejaVu Sans Mono', 'dejavu'],
-              'droidmono': ['Droid Sans Mono', 'droidmono'],
-              'fira': ['Fira Mono', 'fira'],
-              'firacode': ['Fira Code', 'firacode'],
-              'generic': ['Generic Mono', 'generic'],
-              'hack': ['Hack', 'hack'],
-              'hasklig': ['Hasklig', 'hasklig'],
-              'iosevka' : ['Iosevka', 'iosevka'],
-              'inputmono': ['Input Mono', 'inputmono'],
-              'inconsolata': ['Inconsolata-g', 'inconsolata-g'],
-              'liberation': ['Liberation Mono', 'liberation'],
-              'meslo': ['Meslo', 'meslo'],
-              'office': ['Office Code Pro', 'office-code-pro'],
-              'oxygen': ['Oxygen Mono', 'oxygen'],
-              'roboto': ['Roboto Mono', 'roboto'],
-              'saxmono': ['saxMono', 'saxmono'],
-              'source': ['Source Code Pro', 'source-code-pro'],
-              'sourcemed': ['Source Code Pro Medium', 'source-code-medium'],
-              'ptmono': ['PT Mono', 'ptmono'],
-              'ubuntu': ['Ubuntu Mono', 'ubuntu']},
+                 {'anka': ['Anka/Coder', 'anka-coder'],
+                  'anonymous': ['Anonymous Pro', 'anonymous-pro'],
+                  'aurulent': ['Aurulent Sans Mono', 'aurulent'],
+                  'bitstream': ['Bitstream Vera Sans Mono', 'bitstream-vera'],
+                  'bpmono': ['BPmono', 'bpmono'],
+                  'code': ['Code New Roman', 'code-new-roman'],
+                  'consolamono': ['Consolamono', 'consolamono'],
+                  'cousine': ['Cousine', 'cousine'],
+                  'dejavu': ['DejaVu Sans Mono', 'dejavu'],
+                  'droidmono': ['Droid Sans Mono', 'droidmono'],
+                  'fira': ['Fira Mono', 'fira'],
+                  'firacode': ['Fira Code', 'firacode'],
+                  'generic': ['Generic Mono', 'generic'],
+                  'hack': ['Hack', 'hack'],
+                  'hasklig': ['Hasklig', 'hasklig'],
+                  'iosevka': ['Iosevka', 'iosevka'],
+                  'inputmono': ['Input Mono', 'inputmono'],
+                  'inconsolata': ['Inconsolata-g', 'inconsolata-g'],
+                  'liberation': ['Liberation Mono', 'liberation'],
+                  'meslo': ['Meslo', 'meslo'],
+                  'office': ['Office Code Pro', 'office-code-pro'],
+                  'oxygen': ['Oxygen Mono', 'oxygen'],
+                  'roboto': ['Roboto Mono', 'roboto'],
+                  'saxmono': ['saxMono', 'saxmono'],
+                  'source': ['Source Code Pro', 'source-code-pro'],
+                  'sourcemed': ['Source Code Pro Medium', 'source-code-medium'],
+                  'ptmono': ['PT Mono', 'ptmono'],
+                  'ubuntu': ['Ubuntu Mono', 'ubuntu']},
              'sans':
-             {'droidsans': ['Droid Sans', 'droidsans'],
-              'opensans': ['Open Sans', 'opensans'],
-              'ptsans': ['PT Sans', 'ptsans'],
-              'sourcesans': ['Source Sans Pro', 'sourcesans'],
-              'robotosans': ['Roboto', 'robotosans'],
-              'latosans': ['Lato', 'latosans'],
-              'exosans': ['Exo_2', 'exosans'],
-              'proxima': ['Proxima Nova', 'proximasans']},
+                 {'droidsans': ['Droid Sans', 'droidsans'],
+                  'opensans': ['Open Sans', 'opensans'],
+                  'ptsans': ['PT Sans', 'ptsans'],
+                  'sourcesans': ['Source Sans Pro', 'sourcesans'],
+                  'robotosans': ['Roboto', 'robotosans'],
+                  'latosans': ['Lato', 'latosans'],
+                  'exosans': ['Exo_2', 'exosans'],
+                  'proxima': ['Proxima Nova', 'proximasans']},
              'serif':
-             {'ptserif': ['PT Serif', 'ptserif'],
-              'ebserif': ['EB Garamond', 'ebserif'],
-              'loraserif': ['Lora', 'loraserif'],
-              'merriserif': ['Merriweather', 'merriserif'],
-              'crimsonserif': ['Crimson Text', 'crimsonserif'],
-              'georgiaserif': ['Georgia', 'georgiaserif'],
-              'neutonserif': ['Neuton', 'neutonserif'],
-              'cardoserif': ['Cardo Serif', 'cardoserif'],
-              'goudyserif': ['Goudy Serif', 'goudyserif']}}
+                 {'ptserif': ['PT Serif', 'ptserif'],
+                  'ebserif': ['EB Garamond', 'ebserif'],
+                  'loraserif': ['Lora', 'loraserif'],
+                  'merriserif': ['Merriweather', 'merriserif'],
+                  'crimsonserif': ['Crimson Text', 'crimsonserif'],
+                  'georgiaserif': ['Georgia', 'georgiaserif'],
+                  'neutonserif': ['Neuton', 'neutonserif'],
+                  'cardoserif': ['Cardo Serif', 'cardoserif'],
+                  'goudyserif': ['Goudy Serif', 'goudyserif']}}
     if get_all:
         return fonts
     if fontcode in list(fonts['mono']):
@@ -580,3 +586,58 @@ def stored_font_dicts(fontcode, get_all=False):
         return ''
     fontdir = os.sep.join([fontfam, fontdir])
     return '"{}", {}'.format(fontname, fontfam), fontdir
+
+
+_logo_css_head = """
+#ipython_notebook img{{
+    /* http://stackoverflow.com/a/24633671/454773 */
+    display:block;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    background: url("logo.png") no-repeat;
+    background-size: cover;
+    width: {}px; /* Width of new image */
+    height: {}px; /* Height of new image */
+    padding-left: {}px; /* Equal to width of new image */
+}}
+"""
+
+def get_logo_css_head(width, height):
+    return _logo_css_head.format(width, height, width)
+
+_logo_display_none = """
+div#ipython_notebook {
+ display: none;
+}
+"""
+
+def set_logo(wkdir, logo, style_css):
+    # set proper working directory in case logo path is relative
+    if not os.path.exists(logo):
+        if not os.path.exists(os.path.join(wkdir, logo)):
+            msg = "Logo file {} does not exists".format(logo)
+
+            print("\n\t{}".format(msg))
+            raise msg
+        logo = os.path.join(wkdir, logo)
+
+    im = Image.open(logo)
+
+    # resize if needed
+    new_height = 72
+    width, height = im.size
+    if new_height != height:
+        width, height = round(width * new_height / height), new_height
+        im = im.resize((width, height), Image.ANTIALIAS)
+
+    # save to working directory
+    logo_name = os.path.join(jupyter_custom, 'logo.png')
+    if os.path.exists(logo_name):
+        os.remove(logo_name)
+    im.save(logo_name)
+
+    # fix CSS file
+    style_css = get_logo_css_head(width // 2, height // 2) + '\n' + style_css
+    style_css = re.sub(_logo_display_none, "\n", style_css)
+
+    return style_css
