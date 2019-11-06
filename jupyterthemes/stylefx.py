@@ -347,9 +347,9 @@ def toggle_settings(
     if nbname:
         toggle += ('span.save_widget span.filename {margin-left: 8px; height: initial;'
                    'font-size: 100%; color: @nb-name-fg; background-color:'
-                   '@cc-input-bg;}\n')
+                   '@notebook-bg;}\n')
         toggle += ('span.save_widget span.filename:hover {color:'
-                   '@nb-name-hover; background-color: @cc-input-bg;}\n')
+                   '@nb-name-hover; background-color: @notebook-bg;}\n')
         toggle += ('#menubar {padding-top: 4px; background-color:'
                    '@notebook-bg;}\n')
     else:
@@ -624,7 +624,7 @@ def set_logo(wkdir, logo, style_css):
     im = Image.open(logo)
 
     # resize if needed
-    new_height = 72
+    new_height = 36*2
     width, height = im.size
     if new_height != height:
         width, height = round(width * new_height / height), new_height

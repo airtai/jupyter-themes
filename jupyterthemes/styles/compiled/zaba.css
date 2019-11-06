@@ -2230,7 +2230,7 @@ div.cell.text_cell a.anchor-link:link {
 }
 div.cell.text_cell a.anchor-link:link:hover {
  font-size: inherit;
- color: #00afd0;
+ color: #da291c;
 }
 .navbar-text {
  margin-top: 4px;
@@ -3240,12 +3240,12 @@ span.save_widget span.filename {
  margin-left: 8px;
  height: initial;
  font-size: 100%;
- color: #303030;
- background-color: #202020;
+ color: #00afd0;
+ background-color: #000000;
 }
 span.save_widget span.filename:hover {
- color: #00afd0;
- background-color: #202020;
+ color: #da291c;
+ background-color: #000000;
 }
 #menubar {
  padding-top: 4px;
