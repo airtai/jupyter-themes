@@ -1,14 +1,14 @@
-/* changed to Unicredit red */
+@orange:                #ff5a00;
+@cyan:                  #93e5e9;
+@yellow:                #f7b334; // #fdeccc;
 
-@red:                   #da291c;
-@blue:                  #00afd0;
+@red:                   @orange; // darken(@orange, 10%);
+@magenta:               lighten(@orange, 10%);
+@violet:                darken(@orange, 10%);
 
-@yellow:                lighten(@red, 15%);
-@orange:                lighten(@red, 10%);
-@magenta:               lighten(@red, 5%);
-@violet:                darken(@blue, 10%);
-@cyan:                  lighten(@blue, 20%);
-@green:                 lighten(@blue, 10%);
+@blue:                  darken(@cyan, 10%);
+@green:                 lighten(@cyan, 10%);
+
 @code-gray:             #808080;
 @code-fg:               #d0d0d0;
 @code-yellow:           @yellow;
@@ -21,17 +21,17 @@
 @theme-flavor:          #000000;
 @theme-flavor-inverse:  @yellow;
 
-@zaba-base03:          #101010;
-@zaba-base02:          #202020;
-@zaba-base01:          #303030;
-@zaba-base00:          #404040;
+@zaba-base03:           #263746;
+@zaba-base02:           lighten(@zaba-base03, 5%);
+@zaba-base01:           lighten(@zaba-base03, 10%);
+@zaba-base00:           lighten(@zaba-base03, 15%);
 
-@zaba-base0:            #a0a0a0;
-@zaba-base1:            #b0b0b0;
-@zaba-base2:            #e0e0e0;
-@zaba-base3:            #f0f0f0;
+@zaba-base3:            #e6f3ff;
+@zaba-base2:            lighten(@zaba-base3, 5%);
+@zaba-base1:            lighten(@zaba-base3, 10%);
+@zaba-base0:            lighten(@zaba-base3, 15%);
 
-@zaba-bg:               #000000;
+@zaba-bg:               @zaba-base03;
 @zaba-fg:               @zaba-base3;
 
 /* notebook colors */
@@ -52,7 +52,7 @@
 @selected-third:        rgba(90, 90, 90, 0.3);
 @selected-tenth:        rgba(90, 90, 90, 0.1);
 
-@selected-error:        @red;
+@selected-error:        @orange;
 @selected-active:       @selected-half;
 @navbar-selected:       @selected-third;
 @selected-fg:           @zaba-base0;
@@ -67,11 +67,11 @@
 @cc-output-fg:          @notebook-fg;
 @text-cell-fg:          @notebook-fg;
 @unrendered-text:       @blue;
-@header-fg:             @blue;
+@header-fg:             @yellow;
 @tooltip-bg-color:      @zaba-base02;
 @tooltip-fg-color:      @zaba-base1;
-@nb-name-fg:            @blue;
-@nb-name-hover:         @red;
+@nb-name-fg:            @yellow;
+@nb-name-hover:         @yellow;
 
 /* cell border colors */
 @cc-border-selected:    @red;
@@ -112,6 +112,8 @@
 /* buttons, widgets, kernels colors */
 @item-theme:            @zaba-base01;
 @item-blue:             @blue;
+@item-orange:           @orange;
+@item-yellow:           @yellow;
 @item-cyan:             @cyan;
 @item-green:            @cyan;
 @item-red:              @red;
@@ -159,7 +161,7 @@
 @ansicyan:              @cyan;
 @ansiyellow:            @yellow;
 @ansired:               @red;
-@stderr-bg:             @red;
+@stderr-bg:             @orange;
 @stderr-fg:             @zaba-base01;
 @js-error:              @ansired;
 
@@ -167,17 +169,17 @@
 /* @cm-selected:           darken(@zaba-base02, 2%); */
 @cm-selected:           lighten(@blue, 20%);
 @cm-gutters:            darken(@blue, 2%);
-@cm-linenumber:         @zaba-base3;
-@cm-atom:               @magenta;
-@cm-attribute:          @magenta;
+@cm-linenumber:         @zaba-base03;
+@cm-atom:               @orange;
+@cm-attribute:          @orange;
 @cm-comment:            @zaba-base1;
 @cm-property:           @cyan;
-@cm-keyword:            @blue;
+@cm-keyword:            @orange;
 @cm-string:             @cyan;
 @cm-number:             @cyan;
 @cm-meta:               @violet;
-@cm-operator:           @red;
-@cm-builtin:            @red;
+@cm-operator:           @orange;
+@cm-builtin:            @orange;
 @cm-variable:           @cc-input-fg;
 @cm-variable2:          @cc-input-fg;
 @cm-variable3:          @cc-input-fg;
