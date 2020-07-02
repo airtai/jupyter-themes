@@ -1,13 +1,41 @@
-@orange:                #ff5a00;
-@cyan:                  #93e5e9;
-@yellow:                #f7b334; // #fdeccc;
+// Blues
+@dark-blue:             #003851;
+@bright-blue:           #5ec5ed; // bright blue
+@pale-blue:             #6faabc;
 
-@red:                   @orange; // darken(@orange, 10%);
-@magenta:               lighten(@orange, 10%);
-@violet:                darken(@orange, 10%);
+@beige:                 #eae4d9;
 
-@blue:                  darken(@cyan, 10%);
-@green:                 lighten(@cyan, 10%);
+// Violets
+@strong-violet:         #6800a8;
+@pale-purple:           #976ebb;
+@blue-violet:           #6e7cbb;
+@light-purple:          #e5d9ea;
+
+// Reds
+@strong-red:            #c22828; // red
+@bright-pink:           #ec5e97;
+@pale-pink:             #bb6e90;
+@light-pink:            #d5a7af;
+
+// Greens
+@strong-green:          #71ad3d;
+@pale-green:            #9ac475;
+@light-green:           #bfdaa8;
+@lightest-green:        #dbead9;
+
+// Additional
+@bright-orange:         #e08f60;//#d29a79;//bd9776;;
+
+@orange:                @pale-blue; // bright blue
+@cyan:                  @pale-blue; // pale blue
+@yellow:                @light-pink; // bright pink
+
+@red:                   @strong-red; // red
+@magenta:               @pale-pink; // lighten(@orange, 10%);
+@violet:                @light-pink; // darken(@orange, 10%);
+
+@blue:                  @pale-blue; // darken(@cyan, 10%);
+@green:                 @light-green;
 
 @code-gray:             #808080;
 @code-fg:               #d0d0d0;
@@ -21,15 +49,15 @@
 @theme-flavor:          #000000;
 @theme-flavor-inverse:  @yellow;
 
-@base03:           #263746;
-@base02:           lighten(@base03, 5%);
-@base01:           lighten(@base03, 10%);
-@base00:           lighten(@base03, 15%);
+@base03:           @dark-blue;
+@base02:           lighten(@base03, 3%);
+@base01:           lighten(@base03, 6%);
+@base00:           lighten(@base03, 9%);
 
-@base3:            #e6f3ff;
-@base2:            lighten(@base3, 5%);
-@base1:            lighten(@base3, 10%);
-@base0:            lighten(@base3, 15%);
+@base3:            @beige;
+@base2:            darken(@base3, 5%);
+@base1:            darken(@base3, 10%);
+@base0:            darken(@base3, 15%);
 
 @bg:               @base03;
 @fg:               @base3;
@@ -67,17 +95,17 @@
 @cc-output-fg:          @notebook-fg;
 @text-cell-fg:          @notebook-fg;
 @unrendered-text:       @blue;
-@header-fg:             @yellow;
+@header-fg:             @pale-blue;
 @tooltip-bg-color:      @base02;
 @tooltip-fg-color:      @base1;
-@nb-name-fg:            @yellow;
-@nb-name-hover:         @yellow;
+@nb-name-fg:            @pale-blue;
+@nb-name-hover:         @pale-blue;
 
 /* cell border colors */
-@cc-border-selected:    @red;
-@cc-border-edit:        darken(@red, 7%);
-@tc-border-selected:    @red;
-@tc-border-edit:        desaturate(@red, 20%);
+@cc-border-selected:    lighten(@bright-blue, 0%);//@red;
+@cc-border-edit:        lighten(@bright-blue, 0%);//darken(@red, 7%);
+@tc-border-selected:    lighten(@bright-blue, 0%);//@red;
+@tc-border-edit:        lighten(@bright-blue, 0%);//desaturate(@red, 20%);
 
 /* menus, dividers, prompt-borders, brackets */
 @divider:               @selected-half;
@@ -127,10 +155,10 @@
 /* tables and dataframes colors */
 @table-color:           @cc-output-fg;
 @table-bg:              @notebook-bg;
-@table-border:          #D6D6D6;
+@table-border:          @beige;//#D6D6D6;
 @df-header-bg:          darken(@notebook-bg, 3%);
 @df-header:             @base1;
-@df-header-border:      #C4C4C4;
+@df-header-border:      darken(@beige, 5%);//#C4C4C4;
 @df-cell-bg:            @table-bg;
 @codeblock-bg:          darken(@cc-input-bg, 4%);
 @codeblock-border:      @codeblock-bg;
@@ -142,8 +170,8 @@
 @button-hover:          @base00;
 @button-hover-bg:       lighten(@button-bg, 2%);
 @button-hover-border:   @button-hover-bg;
-@button-focus-bg:       darken(desaturate(@red, 60%), 40%);
-@button-focus-fg:       @red;
+@button-focus-bg:       @dark-blue; // darken(desaturate(@red, 60%), 40%);
+@button-focus-fg:       @pale-blue; //@red;
 @button-panel-bg:       @panel-header-bg;
 @button-panel-hover:    darken(@panel-header-bg, 2%);
 @scrollbar:             @item-theme;
@@ -168,18 +196,18 @@
 /* solarized codemirror colors */
 /* @cm-selected:           darken(@base02, 2%); */
 @cm-selected:           lighten(@blue, 20%);
-@cm-gutters:            darken(@blue, 2%);
-@cm-linenumber:         @base03;
-@cm-atom:               @orange;
-@cm-attribute:          @orange;
-@cm-comment:            @base1;
-@cm-property:           @cyan;
-@cm-keyword:            @orange;
-@cm-string:             @cyan;
-@cm-number:             @cyan;
-@cm-meta:               @violet;
-@cm-operator:           @orange;
-@cm-builtin:            @orange;
+@cm-gutters:            @pale-blue;////darken(@blue, 2%);
+@cm-linenumber:         @dark-blue;
+@cm-atom:               @bright-orange;
+@cm-attribute:          @pale-blue;
+@cm-comment:            @light-green; //desaturate(@cc-input-fg, 10%);
+@cm-property:           @pale-blue;
+@cm-keyword:            @bright-orange;
+@cm-string:             @pale-blue;
+@cm-number:             @pale-blue;
+@cm-meta:               @light-purple;
+@cm-operator:           @bright-orange;
+@cm-builtin:            @bright-orange;
 @cm-variable:           @cc-input-fg;
 @cm-variable2:          @cc-input-fg;
 @cm-variable3:          @cc-input-fg;
