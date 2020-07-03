@@ -27,6 +27,7 @@
 @base02:           lighten(@base03, 5%);
 @base01:           lighten(@base03, 10%);
 @base00:           lighten(@base03, 15%);
+@base04:           darken(@base03, 5%);
 
 @base3:            #e6f3ff;
 @base2:            lighten(@base3, 5%);
@@ -40,8 +41,6 @@
 @notebook-bg:           @bg;
 @notebook-fg:           @fg;
 @notebook-base:         @notebook-bg;
-
-@terminal-bg:           darken(@base03, 10%);
 
 /* jtplot figure style */
 @axisFace:              #002b36;
@@ -208,7 +207,7 @@
 
 /* Custom terminal colors */
 div.less-rule-notebook-bg {
-    background-color: @terminal-bg;
+    background-color: @base04;
 }
 div.less-rule-notebook-fg {
     background-color: @notebook-fg;
