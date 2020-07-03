@@ -80,3 +80,44 @@
  * @class customjs
  * @static
  */
+
+// Get less variables for terminal colors
+var rules, rule, i, n, j, m, key;
+var lessRules = [];
+for (i = 0, n = document.styleSheets.length; i < n; i++) {
+    rules = document.styleSheets[i].cssRules;
+    for (j = 0, m = rules.length; j < m; j++) {
+        rule = rules[j];
+        try{
+            if (rules[j].selectorText.indexOf('less-rule') !== -1) {
+            key = /div.less-rule-(.*)/.exec(rules[j].selectorText)[1];
+            lessRules[key] = rule.style['background-color'];
+            }
+        }
+        catch(err){
+            continue;
+        }
+    }
+}
+
+// Apply terminal theme
+terminal.term.setOption('theme', {
+    foreground: lessRules['notebook-fg'],
+    background: lessRules['notebook-bg'],
+    black:         lessRules['ansiblack'],
+    brightBlack:   lessRules['ansiblack'],
+    red:           lessRules['ansired'],
+    brightRed:     lessRules['ansired'],
+    green:         lessRules['ansigreen'],
+    brightGreen:   lessRules['ansigreen'],
+    yellow:        lessRules['ansiyellow'],
+    brightYellow:  lessRules['ansiyellow'],
+    blue:          lessRules['ansiblue'],
+    brightBlue:    lessRules['ansiblue'],
+    magenta:       lessRules['ansimagenta'],
+    brightMagenta: lessRules['ansimagenta'],
+    cyan:          lessRules['ansicyan'],
+    brightCyan:    lessRules['ansicyan'],
+    white:         lessRules['ansiwhite'],
+    brightWhite:   lessRules['ansiwhite'],
+});

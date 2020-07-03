@@ -11,6 +11,36 @@
     padding-left: 36px; /* Equal to width of new image */
 }
 
+div.less-rule-notebook-bg {
+ background-color: #003851;
+}
+div.less-rule-notebook-fg {
+ background-color: #eae4d9;
+}
+div.less-rule-ansiblack {
+ background-color: #003851;
+}
+div.less-rule-ansired {
+ background-color: #c22828;
+}
+div.less-rule-ansigreen {
+ background-color: #bfdaa8;
+}
+div.less-rule-ansiyellow {
+ background-color: #d5a7af;
+}
+div.less-rule-ansiblue {
+ background-color: #6faabc;
+}
+div.less-rule-ansimagenta {
+ background-color: #bb6e90;
+}
+div.less-rule-ansicyan {
+ background-color: #6faabc;
+}
+div.less-rule-ansiwhite {
+ background-color: #eae4d9;
+}
 div#notebook {
  font-family: sans-serif;
  font-size: 13pt;
