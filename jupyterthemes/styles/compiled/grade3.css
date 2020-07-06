@@ -1,3 +1,33 @@
+div.less-rule-notebook-bg {
+ background-color: #ffffff;
+}
+div.less-rule-notebook-fg {
+ background-color: #303030;
+}
+div.less-rule-ansiblack {
+ background-color: #e22978;
+}
+div.less-rule-ansired {
+ background-color: #de143d;
+}
+div.less-rule-ansigreen {
+ background-color: #333333;
+}
+div.less-rule-ansiyellow {
+ background-color: #ff8132;
+}
+div.less-rule-ansiblue {
+ background-color: #009e07;
+}
+div.less-rule-ansimagenta {
+ background-color: #e22978;
+}
+div.less-rule-ansicyan {
+ background-color: #055be0;
+}
+div.less-rule-ansiwhite {
+ background-color: #303030;
+}
 div#notebook {
  font-family: sans-serif;
  font-size: 13pt;
@@ -238,6 +268,8 @@ body > #header #header-container {
  box-sizing: border-box;
  -moz-box-sizing: border-box;
  -webkit-box-sizing: border-box;
+ background-color: #ffffff;
+ background: #ffffff;
 }
 body > #header {
  background: #ffffff;
@@ -382,6 +414,9 @@ ul#tabs a {
  font-weight: normal;
  font-style: normal;
  text-shadow: none !important;
+ background-color: #ffffff;
+ background: #ffffff;
+ color: #303030;
 }
 .nav-tabs {
  font-family: sans-serif;
@@ -1791,8 +1826,8 @@ div.text_cell_render {
  font-size: 13pt;
  line-height: 130% !important;
  color: #353535;
- background: #ffffff;
- background-color: #ffffff;
+ background: #ededed;
+ background-color: #ededed;
  border-radius: 0px;
 }
 div .text_cell_render {
@@ -2784,6 +2819,7 @@ div#short-key-bindings-intro.well,
 }
 .terminal-app > #header {
  background: #ffffff;
+ background-color: #ffffff;
 }
 .terminal-app .terminal {
  font-family: monospace, monospace;
@@ -2800,6 +2836,7 @@ div#short-key-bindings-intro.well,
  background-color: #ededed;
  color: #303030;
  overflow-y: auto;
+ background: #ededed;
 }
 .terminal .xterm-color-0 {
  color: #ff7823;

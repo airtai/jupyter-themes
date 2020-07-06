@@ -238,10 +238,12 @@ body > #header #header-container {
     box-sizing: border-box;
     -moz-box-sizing: border-box;
     -webkit-box-sizing: border-box;
+    background-color: @menu-bg;
+    background: @menu-bg;
 }
 body > #header {
-    background: @notebook-bg;
-    background-color: @notebook-bg;
+    background: @menu-bg;
+    background-color: @menu-bg;
     position: relative;
     z-index: 100;
 }
@@ -380,7 +382,9 @@ ul#tabs a {
     font-weight: normal;
     font-style: normal;
     text-shadow: none !important;
-
+    background-color: @menu-bg;
+    background: @menu-bg;
+    color: @menu-fg;
 }
 .nav-tabs {
     font-family: @notebook-fontfamily;
@@ -493,7 +497,7 @@ div#header-container {
 .notebook_app #header,
 .edit_app #header {
     box-shadow: none !important;
-    background-color: @notebook-bg;
+    background-color: @menu-bg;
     border-bottom: 2px solid @selected-third;
 }
 #header,
@@ -501,27 +505,27 @@ div#header-container {
     font-family: @notebook-fontfamily;
     font-size: @nb-fontsize;
     box-shadow: none;
-    background-color: @notebook-bg;
+    background-color: @menu-bg;
 }
 #header .header-bar,
 .edit_app #header .header-bar {
-    background: @notebook-bg;
-    background-color: @notebook-bg;
+    background: @menu-bg;
+    background-color: @menu-bg;
 }
 body > #header .header-bar {
     width: 100%;
-    background: @notebook-bg;
+    background: @menu-bg;
 }
 span.checkpoint_status, span.autosave_status {
     font-size: small;
     display: none;
 }
 #menubar, div#menubar {
-    background-color: @notebook-bg;
+    background-color: @menu-bg;
     padding-top: 0px !important;
 }
 #menubar .navbar, .navbar-default {
-    background-color: @notebook-bg;
+    background-color: @menu-bg;
     margin-bottom: 0px;
     margin-top: 0px;
 }
@@ -539,7 +543,7 @@ p.navbar-text.indicator_area {
 .navbar-default {
     font-family: @notebook-fontfamily;
     font-size: @nb-fontsize;
-    background-color: @notebook-bg;
+    background-color: @menu-bg;
     border-color: @dropdown-hover;
     line-height: 1.5em;
     padding-bottom: 0px;
@@ -547,7 +551,7 @@ p.navbar-text.indicator_area {
 .navbar-default .navbar-nav > li > a {
     font-family: @notebook-fontfamily;
     font-size: @nb-fontsize;
-    color: @notebook-fg;
+    color: @menu-fg;
     display: block;
     line-height: 1.5em;
     padding-top: 14px;
@@ -709,8 +713,8 @@ div#notification_notebook.notification_widget.btn.btn-xs.navbar-btn {
 #kernel_indicator {
     float: right !important;
     color: @item-theme;
-    background: @notebook-bg;
-    background-color: @notebook-bg;
+    background: @menu-bg;
+    background-color: @menu-bg;
     border-left: 2px solid @item-theme;
     padding-top: 0px;
     padding-bottom: 4px;
@@ -720,9 +724,9 @@ div#notification_notebook.notification_widget.btn.btn-xs.navbar-btn {
 }
 #kernel_indicator .kernel_indicator_name {
     font-size: 17px;
-    color: @item-theme;
-    background: @notebook-bg;
-    background-color: @notebook-bg;
+    color: @kernel-theme;
+    background: @menu-bg;
+    background-color: @menu-bg;
     padding-left: 5px;
     padding-right: 5px;
     margin-top: 4px;

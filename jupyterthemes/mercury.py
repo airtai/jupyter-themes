@@ -1,1 +1,0 @@
-mercury_extra = ".terminal-app > #header {background-color: @notebook-header-bg;} .terminal .xterm-viewport {background: @cc-input-bg;}"

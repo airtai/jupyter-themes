@@ -1,3 +1,33 @@
+div.less-rule-notebook-bg {
+ background-color: #262931;
+}
+div.less-rule-notebook-fg {
+ background-color: #a2b0c7;
+}
+div.less-rule-ansiblack {
+ background-color: #2b303b;
+}
+div.less-rule-ansired {
+ background-color: #e39194;
+}
+div.less-rule-ansigreen {
+ background-color: #8fca9a;
+}
+div.less-rule-ansiyellow {
+ background-color: #ddd7a3;
+}
+div.less-rule-ansiblue {
+ background-color: #61afef;
+}
+div.less-rule-ansimagenta {
+ background-color: #e07a7a;
+}
+div.less-rule-ansicyan {
+ background-color: #77abe7;
+}
+div.less-rule-ansiwhite {
+ background-color: #a2b0c7;
+}
 div#notebook {
  font-family: sans-serif;
  font-size: 13pt;
@@ -238,6 +268,8 @@ body > #header #header-container {
  box-sizing: border-box;
  -moz-box-sizing: border-box;
  -webkit-box-sizing: border-box;
+ background-color: #262931;
+ background: #262931;
 }
 body > #header {
  background: #262931;
@@ -382,6 +414,9 @@ ul#tabs a {
  font-weight: normal;
  font-style: normal;
  text-shadow: none !important;
+ background-color: #262931;
+ background: #262931;
+ color: #a2b0c7;
 }
 .nav-tabs {
  font-family: sans-serif;
@@ -2784,6 +2819,7 @@ div#short-key-bindings-intro.well,
 }
 .terminal-app > #header {
  background: #262931;
+ background-color: #262931;
 }
 .terminal-app .terminal {
  font-family: monospace, monospace;
@@ -2800,6 +2836,7 @@ div#short-key-bindings-intro.well,
  background-color: #303845;
  color: #cdd2e9;
  overflow-y: auto;
+ background: #303845;
 }
 .terminal .xterm-color-0 {
  color: #4c8be2;
