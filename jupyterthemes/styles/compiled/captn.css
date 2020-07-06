@@ -281,6 +281,8 @@ body > #header #header-container {
  box-sizing: border-box;
  -moz-box-sizing: border-box;
  -webkit-box-sizing: border-box;
+ background-color: #003851;
+ background: #003851;
 }
 body > #header {
  background: #003851;
@@ -425,6 +427,9 @@ ul#tabs a {
  font-weight: normal;
  font-style: normal;
  text-shadow: none !important;
+ background-color: #003851;
+ background: #003851;
+ color: #eae4d9;
 }
 .nav-tabs {
  font-family: sans-serif;
@@ -2824,6 +2829,7 @@ div#short-key-bindings-intro.well,
 }
 .terminal-app > #header {
  background: #003851;
+ background-color: #003851;
 }
 .terminal-app .terminal {
  font-family: monospace, monospace;
@@ -2840,6 +2846,7 @@ div#short-key-bindings-intro.well,
  background-color: #004360;
  color: #eae4d9;
  overflow-y: auto;
+ background: #004360;
 }
 .terminal .xterm-color-0 {
  color: #004d70;

@@ -11,6 +11,36 @@
     padding-left: 94px; /* Equal to width of new image */
 }
 
+div.less-rule-notebook-bg {
+ background-color: #303030;
+}
+div.less-rule-notebook-fg {
+ background-color: #f0f0f0;
+}
+div.less-rule-ansiblack {
+ background-color: #101010;
+}
+div.less-rule-ansired {
+ background-color: #2ee9b6;
+}
+div.less-rule-ansigreen {
+ background-color: #2ee9b6;
+}
+div.less-rule-ansiyellow {
+ background-color: #73f0ce;
+}
+div.less-rule-ansiblue {
+ background-color: #2ee9b6;
+}
+div.less-rule-ansimagenta {
+ background-color: #45ebbe;
+}
+div.less-rule-ansicyan {
+ background-color: #8af3d6;
+}
+div.less-rule-ansiwhite {
+ background-color: #f0f0f0;
+}
 div#notebook {
  font-family: sans-serif;
  font-size: 13pt;
@@ -248,11 +278,11 @@ span#login_widget > .button.active,
 body > #header #header-container {
  padding-bottom: 0px;
  padding-top: 4px;
- background-color: #412b76;
- background: #412b76;
  box-sizing: border-box;
  -moz-box-sizing: border-box;
  -webkit-box-sizing: border-box;
+ background-color: #412b76;
+ background: #412b76;
 }
 body > #header {
  background: #412b76;
@@ -2814,9 +2844,9 @@ div#short-key-bindings-intro.well,
 }
 .terminal .xterm-viewport {
  background-color: #404040;
- background: #404040;
  color: #f0f0f0;
  overflow-y: auto;
+ background: #404040;
 }
 .terminal .xterm-color-0 {
  color: #b0b0b0;

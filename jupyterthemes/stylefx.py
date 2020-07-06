@@ -318,9 +318,6 @@ def style_layout(style_less,
     # read-in extras.less (misc layout)
     with fileOpen(ex_style, 'r') as extras:
         style_less += extras.read() + '\n'
-    if theme == "mercury":
-        from mercury import mercury_extra
-        style_less += mercury_extra
 
     # read-in codemirror.less (syntax-highlighting)
     with fileOpen(cm_style, 'r') as codemirror:
@@ -348,14 +345,13 @@ def toggle_settings(
     else:
         toggle += 'div#maintoolbar {display: none !important;}\n'
     if nbname:
-        bg_color = "@notebook-bg" if theme != "mercury" else "@notebook-header-bg"
         toggle += ('span.save_widget span.filename {margin-left: 8px; height: initial;'
                    'font-size: 100%; color: @nb-name-fg; background-color:'
-                   + bg_color +';}\n')
+                   '@menu-bg;}\n')
         toggle += ('span.save_widget span.filename:hover {color:'
-                   '@nb-name-hover; background-color:' + bg_color + ';}\n')
+                   '@nb-name-hover; background-color: @menu-bg;}\n')
         toggle += ('#menubar {padding-top: 4px; background-color:'
-                   + bg_color +';}\n')
+                   '@menu-bg;}\n')
     else:
         toggle += '#header-container {display: none !important;}\n'
     if hideprompt:
