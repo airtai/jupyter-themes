@@ -1,16 +1,12 @@
-/* changed to Unicredit red */
+@red:                   #2ee9b6;
+@blue:                  #2ee9b6;
 
-@orange:                #ff5a00;
-@cyan:                  #93e5e9;
-@yellow:                #f7b334; // #fdeccc;
-
-@red:                   @orange; // darken(@orange, 10%);
-@magenta:               lighten(@orange, 10%);
-@violet:                darken(@orange, 10%);
-
-@blue:                  darken(@cyan, 10%);
-@green:                 lighten(@cyan, 10%);
-
+@yellow:                lighten(@red, 15%);
+@orange:                lighten(@red, 10%);
+@magenta:               lighten(@red, 5%);
+@violet:                #412b76;
+@cyan:                  lighten(@blue, 20%);
+@green:                 @blue;
 @code-gray:             #808080;
 @code-fg:               #d0d0d0;
 @code-yellow:           @yellow;
@@ -23,22 +19,22 @@
 @theme-flavor:          #000000;
 @theme-flavor-inverse:  @yellow;
 
-@base03:           #263746;
-@base02:           lighten(@base03, 5%);
-@base01:           lighten(@base03, 10%);
-@base00:           lighten(@base03, 15%);
-@base04:           darken(@base03, 5%);
+@base03:           #101010;
+@base02:           #202020;
+@base01:           #303030;
+@base00:           #404040;
 
-@base3:            #e6f3ff;
-@base2:            lighten(@base3, 5%);
-@base1:            lighten(@base3, 10%);
-@base0:            lighten(@base3, 15%);
+@base0:            #a0a0a0;
+@base1:            #b0b0b0;
+@base2:            #e0e0e0;
+@base3:            #f0f0f0;
 
-@bg:               @base03;
+@bg:               #303030;
 @fg:               @base3;
 
 /* notebook colors */
 @notebook-bg:           @bg;
+@notebook-header-bg:    @violet;
 @notebook-fg:           @fg;
 @notebook-base:         @notebook-bg;
 
@@ -55,7 +51,7 @@
 @selected-third:        rgba(90, 90, 90, 0.3);
 @selected-tenth:        rgba(90, 90, 90, 0.1);
 
-@selected-error:        @orange;
+@selected-error:        @red;
 @selected-active:       @selected-half;
 @navbar-selected:       @selected-third;
 @selected-fg:           @base0;
@@ -63,18 +59,18 @@
 @unemphasize-fg:        @base1;
 
 /* code, text, markdown, & tooltip colors */
-@cc-input-bg:           @base02;
+@cc-input-bg:           @base00;
 @cc-input-fg:           @notebook-fg;
 /* @cc-output-bg-default:  @notebook-bg; */
 @cc-output-bg-default:  @base03;
 @cc-output-fg:          @notebook-fg;
 @text-cell-fg:          @notebook-fg;
 @unrendered-text:       @blue;
-@header-fg:             @yellow;
+@header-fg:             @blue;
 @tooltip-bg-color:      @base02;
 @tooltip-fg-color:      @base1;
-@nb-name-fg:            @yellow;
-@nb-name-hover:         @yellow;
+@nb-name-fg:            @notebook-fg;
+@nb-name-hover:         @red;
 
 /* cell border colors */
 @cc-border-selected:    @red;
@@ -113,10 +109,8 @@
 @cmd-palette-hover:     @panel-bg;
 
 /* buttons, widgets, kernels colors */
-@item-theme:            @base01;
+@item-theme:            @base1;
 @item-blue:             @blue;
-@item-orange:           @orange;
-@item-yellow:           @yellow;
 @item-cyan:             @cyan;
 @item-green:            @cyan;
 @item-red:              @red;
@@ -166,25 +160,25 @@
 @ansired:               @red;
 @ansimagenta:           @magenta;
 @ansiwhite:             @notebook-fg;
-@stderr-bg:             @orange;
+@stderr-bg:             @red;
 @stderr-fg:             @base01;
 @js-error:              @ansired;
 
 /* solarized codemirror colors */
 /* @cm-selected:           darken(@base02, 2%); */
 @cm-selected:           lighten(@blue, 20%);
-@cm-gutters:            darken(@blue, 2%);
-@cm-linenumber:         @base03;
-@cm-atom:               @orange;
-@cm-attribute:          @orange;
+@cm-gutters:            @violet;
+@cm-linenumber:         @green;
+@cm-atom:               @magenta;
+@cm-attribute:          @magenta;
 @cm-comment:            @base1;
 @cm-property:           @cyan;
-@cm-keyword:            @orange;
+@cm-keyword:            @blue;
 @cm-string:             @cyan;
 @cm-number:             @cyan;
 @cm-meta:               @violet;
-@cm-operator:           @orange;
-@cm-builtin:            @orange;
+@cm-operator:           @red;
+@cm-builtin:            @red;
 @cm-variable:           @cc-input-fg;
 @cm-variable2:          @cc-input-fg;
 @cm-variable3:          @cc-input-fg;
@@ -198,19 +192,19 @@
 @cm-latex:              @notebook-fg;
 
 /* Custom notebook style */
-@nb-fa-folder-color:  @item-yellow;
-@nb-folder-icon-color:  @item-yellow;
-@nb-notebook-icon-color:  @item-blue;
-@nb-item-icon-color:  @item-yellow;
-@nb-notification-widget-color:  @item-orange;
-@nb-item-buttons-color:  @item-yellow;
+@nb-fa-folder-color:  @item-blue;
+@nb-folder-icon-color:  @item-blue;
+@nb-notebook-icon-color:  @item-green;
+@nb-item-icon-color:  @item-blue;
+@nb-notification-widget-color:  @item-blue;
+@nb-item-buttons-color:  @item-blue;
 
 /* Custom style for extra.less */
-@terminal-app-bg: @notebook-bg;
+@terminal-app-bg: @notebook-header-bg;
 
 /* Custom terminal colors */
 div.less-rule-notebook-bg {
-    background-color: @base04;
+    background-color: @notebook-bg;
 }
 div.less-rule-notebook-fg {
     background-color: @notebook-fg;
