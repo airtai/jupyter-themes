@@ -1,16 +1,3 @@
-
-#ipython_notebook img{
-    /* http://stackoverflow.com/a/24633671/454773 */
-    display:block;
-    -moz-box-sizing: border-box;
-    box-sizing: border-box;
-    background: url("logo.png") no-repeat;
-    background-size: cover;
-    width: 36px; /* Width of new image */
-    height: 36px; /* Height of new image */
-    padding-left: 36px; /* Equal to width of new image */
-}
-
 div.less-rule-notebook-bg {
  background-color: #003851;
 }
@@ -844,6 +831,9 @@ div.notification_widget {
 #kernel_logo_widget .current_kernel_logo {
  display: none;
 }
+div#ipython_notebook {
+ display: none;
+}
 i.fa.fa-icon {
  -webkit-font-smoothing: antialiased;
  -moz-osx-font-smoothing: grayscale;
@@ -1506,6 +1496,15 @@ a {
  text-rendering: geometricPrecision;
  -webkit-font-smoothing: subpixel-antialiased;
  font-weight: 400;
+}
+input.bk.bk-input {
+ background-color: #003851;
+}
+select.bk.bk-input {
+ background-color: #003851;
+}
+textarea.bk.bk-input {
+ background-color: #003851;
 }
 div.input_area {
  background-color: #004360;
@@ -3056,7 +3055,7 @@ div.tooltiptext.bigtooltip {
  font-weight: normal;
 }
 .cm-s-ipython div.CodeMirror-selected {
- background: #b5d3dc;
+ background: #003147;
 }
 .CodeMirror-gutters {
  border: none;
@@ -3234,10 +3233,10 @@ div.cell.text_cell .cm-s-default span.cm-variable-3 {
  width: 0;
 }
 .cm-s-default div.CodeMirror-selected {
- background: #b5d3dc;
+ background: #003147;
 }
 .cm-s-default .cm-selected {
- background: #b5d3dc;
+ background: #003147;
 }
 .MathJax_Display,
 .MathJax {
