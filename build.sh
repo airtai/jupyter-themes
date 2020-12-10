@@ -5,4 +5,4 @@ rm -rf dist build
 pip uninstall jupyterthemes -y
 python3 setup.py bdist_wheel
 pip install dist/jupyterthemes-0.20.0-py2.py3-none-any.whl
-jt -t airt -cellw 90% -N -T --logo airt-neg-trans.png
+jt -t airtd -cellw 90% -N -T --logo airt-neg-trans.png
