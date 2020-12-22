@@ -130,7 +130,7 @@ def set_font_properties(style_less,
                         monofont=None,
                         monosize=11,
                         tcfontsize=13,
-                        headerfont=None,
+                        thfont=None,
                         nbfontsize=13,
                         prfontsize=95,
                         dffontsize=93,
@@ -165,18 +165,18 @@ def set_font_properties(style_less,
                 style_less = import_fonts(style_less, nbfont, nbfontpath)
         else:
             nbfont = 'sans-serif'
-        if headerfont is not None:
-            headerfont, headerfontpath = stored_font_dicts(headerfont)
-            style_less = import_fonts(style_less, headerfont, headerfontpath)
+        if thfont is not None:
+            thfont, thfontpath = stored_font_dicts(thfont)
+            style_less = import_fonts(style_less, thfont, thfontpath)
         else:
-            headerfont = '@notebook-fontfamily'
+            thfont = '@notebook-fontfamily'
 
     style_less += '/* Set Font-Type and Font-Size Variables  */\n'
     # font names and fontfamily info for codecells, notebook & textcells
     style_less += '@monofont: {}; \n'.format(monofont)
     style_less += '@notebook-fontfamily: {}; \n'.format(nbfont)
     style_less += '@text-cell-fontfamily: {}; \n'.format(tcfont)
-    style_less += '@text-headers-fontfamily: {}; \n'.format(headerfont)
+    style_less += '@text-headers-fontfamily: {}; \n'.format(thfont)
     # font size for codecells, main notebook, notebook-sub, & textcells
     style_less += '@monofontsize: {}pt; \n'.format(monosize)
     style_less += '@monofontsize-sub: {}pt; \n'.format(float(monosize) - 1)
