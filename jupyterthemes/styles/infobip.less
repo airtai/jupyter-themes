@@ -24,12 +24,12 @@
 @theme-flavor-inverse:  @yellow;
 
 @base03:           #263746;
-@base02:           lighten(@base03, 5%);
-@base01:           lighten(@base03, 10%);
-@base00:           lighten(@base03, 15%);
-@base04:           darken(@base03, 5%);
+@base02:           darken(@base03, 3%);
+@base01:           lighten(@base03, 5%);
+@base00:           lighten(@base03, 10%);
+@base04:           darken(@base03, 10%);
 
-@base3:            #e6f3ff;
+@base3:            #eee;
 @base2:            lighten(@base3, 5%);
 @base1:            lighten(@base3, 10%);
 @base0:            lighten(@base3, 15%);
@@ -70,17 +70,20 @@
 @cc-output-fg:          @notebook-fg;
 @text-cell-fg:          @notebook-fg;
 @unrendered-text:       @blue;
-@header-fg:             @yellow;
+// @header-fg:             @yellow;
+@header-fg:             @notebook-fg;
 @tooltip-bg-color:      @base02;
 @tooltip-fg-color:      @base1;
-@nb-name-fg:            @yellow;
-@nb-name-hover:         @yellow;
+// @nb-name-fg:            @yellow;
+// @nb-name-hover:         @yellow;
+@nb-name-fg:            @notebook-fg;
+@nb-name-hover:         @notebook-fg;
 
 /* cell border colors */
-@cc-border-selected:    @red;
-@cc-border-edit:        darken(@red, 7%);
-@tc-border-selected:    @red;
-@tc-border-edit:        desaturate(@red, 20%);
+@cc-border-selected:    @yellow;
+@cc-border-edit:        darken(@yellow, 7%);
+@tc-border-selected:    @yellow;
+@tc-border-edit:        desaturate(@yellow, 20%);
 
 /* menus, dividers, prompt-borders, brackets */
 @divider:               @selected-half;
@@ -173,8 +176,9 @@
 /* solarized codemirror colors */
 @cm-selected:           darken(@base02, 5%);
 /* @cm-selected:           lighten(@blue, 20%); */
-@cm-gutters:            darken(@blue, 2%);
-@cm-linenumber:         @base03;
+// @cm-gutters:            darken(@blue, 2%);
+@cm-gutters:            @orange;
+@cm-linenumber:         @fg;
 @cm-atom:               @orange;
 @cm-attribute:          @orange;
 @cm-comment:            @base1;
