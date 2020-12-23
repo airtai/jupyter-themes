@@ -1497,6 +1497,15 @@ a {
  -webkit-font-smoothing: subpixel-antialiased;
  font-weight: 400;
 }
+input.bk.bk-input {
+ background-color: #002b36;
+}
+select.bk.bk-input {
+ background-color: #002b36;
+}
+textarea.bk.bk-input {
+ background-color: #002b36;
+}
 div.input_area {
  background-color: #073642;
  background: #073642;

@@ -1,3 +1,16 @@
+
+#ipython_notebook img{
+    /* http://stackoverflow.com/a/24633671/454773 */
+    display:block;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    background: url("logo.png") no-repeat;
+    background-size: cover;
+    width: 182px; /* Width of new image */
+    height: 36px; /* Height of new image */
+    padding-left: 182px; /* Equal to width of new image */
+}
+
 div.less-rule-notebook-bg {
  background-color: #000000;
 }
@@ -725,7 +738,7 @@ div#notification_notebook.notification_widget.btn.btn-xs.navbar-btn {
 }
 #kernel_indicator {
  float: right !important;
- color: #303030;
+ color: #f0f0f0;
  background: #000000;
  background-color: #000000;
  border-left: 2px solid #303030;
@@ -737,7 +750,7 @@ div#notification_notebook.notification_widget.btn.btn-xs.navbar-btn {
 }
 #kernel_indicator .kernel_indicator_name {
  font-size: 17px;
- color: #303030;
+ color: #f0f0f0;
  background: #000000;
  background-color: #000000;
  padding-left: 5px;
@@ -829,9 +842,6 @@ div.notification_widget {
 }
 #kernel_logo_widget,
 #kernel_logo_widget .current_kernel_logo {
- display: none;
-}
-div#ipython_notebook {
  display: none;
 }
 i.fa.fa-icon {
