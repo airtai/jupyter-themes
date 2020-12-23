@@ -738,7 +738,7 @@ div#notification_notebook.notification_widget.btn.btn-xs.navbar-btn {
 }
 #kernel_indicator {
  float: right !important;
- color: #385167;
+ color: #e6f3ff;
  background: #263746;
  background-color: #263746;
  border-left: 2px solid #385167;
@@ -750,7 +750,7 @@ div#notification_notebook.notification_widget.btn.btn-xs.navbar-btn {
 }
 #kernel_indicator .kernel_indicator_name {
  font-size: 17px;
- color: #385167;
+ color: #e6f3ff;
  background: #263746;
  background-color: #263746;
  padding-left: 5px;

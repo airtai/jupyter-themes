@@ -725,7 +725,7 @@ div#notification_notebook.notification_widget.btn.btn-xs.navbar-btn {
 }
 #kernel_indicator {
  float: right !important;
- color: #a6e22e;
+ color: #f8f8f0;
  background: #1e1e1e;
  background-color: #1e1e1e;
  border-left: 2px solid #a6e22e;
@@ -737,7 +737,7 @@ div#notification_notebook.notification_widget.btn.btn-xs.navbar-btn {
 }
 #kernel_indicator .kernel_indicator_name {
  font-size: 17px;
- color: #a6e22e;
+ color: #f8f8f0;
  background: #1e1e1e;
  background-color: #1e1e1e;
  padding-left: 5px;
@@ -1496,6 +1496,15 @@ a {
  text-rendering: geometricPrecision;
  -webkit-font-smoothing: subpixel-antialiased;
  font-weight: 400;
+}
+input.bk.bk-input {
+ background-color: #1e1e1e;
+}
+select.bk.bk-input {
+ background-color: #1e1e1e;
+}
+textarea.bk.bk-input {
+ background-color: #1e1e1e;
 }
 div.input_area {
  background-color: #282828;
