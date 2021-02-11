@@ -1174,13 +1174,13 @@ button.close {
  display: inline-block;
 }
 .close {
- color: #c22828;
+ color: #6faabc;
  opacity: .5;
  text-shadow: none;
  font-weight: normal;
 }
 .close:hover {
- color: #c22828;
+ color: #6faabc;
  opacity: 1;
  font-weight: normal;
 }
