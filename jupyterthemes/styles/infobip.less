@@ -13,7 +13,7 @@
 @violet:                lighten(@purple, 40%);
 @magenta:               lighten(@violet, 60%);
 
-@blue:                  @mint;
+@blue:                  lighten(@deep-blue, 30%);//@mint;
 @green:                 @deep-green;
 
 @code-gray:             #808080;
@@ -189,12 +189,12 @@
 // @cm-gutters:            darken(@blue, 2%);
 @cm-gutters:            @deep-blue;
 @cm-linenumber:         @fg;
-@cm-atom:               @orange;
-@cm-attribute:          @orange;
-@cm-comment:            @blue;
+@cm-atom:               @magenta;
+@cm-attribute:          @green;
+@cm-comment:            @mint;
 @cm-property:           @cyan;
 @cm-keyword:            @orange;
-@cm-string:             @green;
+@cm-string:             @blue;
 @cm-number:             @yellow;
 @cm-meta:               @violet;
 @cm-operator:           @orange;
@@ -214,7 +214,7 @@
 /* Custom notebook style */
 @nb-fa-folder-color:  @item-green;
 @nb-folder-icon-color:  @item-green;
-@nb-notebook-icon-color:  @item-orange;
+@nb-notebook-icon-color:  @item-yellow;
 @nb-item-icon-color:  @item-orange;
 @nb-notification-widget-color:  @item-orange;
 @nb-item-buttons-color:  @item-orange;
