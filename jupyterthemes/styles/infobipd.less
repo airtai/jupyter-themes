@@ -10,10 +10,10 @@
 @yellow:                #F7B334; // #fdeccc;
 
 @red:                   #FF0000; // darken(@orange, 10%);
-@violet:                lighten(@purple, 10%);
+@violet:                lighten(@purple, 20%);
 @magenta:               lighten(@violet, 20%);
 
-@blue:                  @deep-blue;
+@blue:                  lighten(@deep-blue, 30%); // tint(@deep-blue, 20%);
 @green:                 @deep-green;
 
 @code-gray:             #808080;
@@ -162,7 +162,7 @@
 @button-focus-fg:       @blue;
 @button-panel-bg:       @panel-header-bg;
 @button-panel-hover:    darken(@panel-header-bg, 2%);
-@scrollbar:             @orange; // @item-theme;
+@scrollbar:             @deep-blue; // @item-theme;
 @scroll-trough:         @base01;
 @scrollbar-inactive:    @base1;
 @box-shadow:            #202020;
@@ -188,17 +188,17 @@
 /* @cm-selected:           lighten(@blue, 20%); */
 // @cm-gutters:            darken(@blue, 2%);
 @cm-gutters:            @deep-blue;
-@cm-linenumber:         @bg;
+@cm-linenumber:         @fg;
 @cm-atom:               @magenta;
 @cm-attribute:          @magenta;
-@cm-comment:            @green;
+@cm-comment:            @mint;
 @cm-property:           @cyan;
 @cm-keyword:            @orange;
-@cm-string:             @cyan;
+@cm-string:             @yellow;
 @cm-number:             @magenta;
 @cm-meta:               @violet;
-@cm-operator:           @orange;
-@cm-builtin:            @orange;
+@cm-operator:           @green;
+@cm-builtin:            @green;
 @cm-variable:           @cc-input-fg;
 @cm-variable2:          @cc-input-fg;
 @cm-variable3:          @cc-input-fg;
@@ -213,8 +213,8 @@
 
 /* Custom notebook style */
 @nb-fa-folder-color:  @item-green;
-@nb-folder-icon-color:  @item-green;
-@nb-notebook-icon-color:  @yellow;
+@nb-folder-icon-color:  @yellow;
+@nb-notebook-icon-color:  @cyan;
 @nb-item-icon-color:  @item-orange;
 @nb-notification-widget-color:  @item-orange;
 @nb-item-buttons-color:  @item-orange;
