@@ -66,10 +66,10 @@ div.less-rule-ansiyellow {
  background-color: #f7b334;
 }
 div.less-rule-ansiblue {
- background-color: #194570;
+ background-color: #4b92d7;
 }
 div.less-rule-ansimagenta {
- background-color: #913df2;
+ background-color: #ac6ef4;
 }
 div.less-rule-ansicyan {
  background-color: #26cad3;
@@ -230,7 +230,7 @@ span#sort-name.btn.btn-xs.btn-default.sort-action:hover .fa {
  -webkit-font-smoothing: antialiased;
  -moz-osx-font-smoothing: grayscale;
  content: "\f07b";
- color: #148997;
+ color: #f7b334;
 }
 .notebook_icon:before {
  display: inline-block;
@@ -241,7 +241,7 @@ span#sort-name.btn.btn-xs.btn-default.sort-action:hover .fa {
  -moz-osx-font-smoothing: grayscale;
  content: "\f02d";
  position: relative;
- color: #f7b334 !important;
+ color: #26cad3 !important;
  top: 0px;
 }
 .file_icon:before {
@@ -1040,7 +1040,7 @@ div.kse-dropdown > .dropdown-menu,
 .btn-default.active:focus,
 .btn-default:active.focus,
 .btn-default.active.focus {
- color: #194570 !important;
+ color: #4b92d7 !important;
  background-color: #141d25;
  border-color: #090d11 !important;
  transition: 2000ms ease;
@@ -1053,7 +1053,7 @@ div.kse-dropdown > .dropdown-menu,
 .btn.active,
 .btn:active.focus,
 .btn.active.focus {
- color: #194570 !important;
+ color: #4b92d7 !important;
  outline: none !important;
  outline-width: 0px !important;
  background: #090d11 !important;
@@ -1220,13 +1220,13 @@ button.close {
  display: inline-block;
 }
 .close {
- color: #194570;
+ color: #4b92d7;
  opacity: .5;
  text-shadow: none;
  font-weight: normal;
 }
 .close:hover {
- color: #194570;
+ color: #4b92d7;
  opacity: 1;
  font-weight: normal;
 }
@@ -1506,7 +1506,7 @@ div.output.output_scroll {
 ::-webkit-scrollbar-thumb {
  border-radius: 2px;
  border: none;
- background: #ff5a00;
+ background: #194570;
  background-clip: content-box;
  width: 11px;
 }
@@ -2327,7 +2327,7 @@ div.cell.text_cell a.anchor-link:link:hover {
  margin-bottom: 0px;
 }
 #clusters > a {
- color: #194570;
+ color: #4b92d7;
  text-decoration: underline;
  cursor: auto;
 }
@@ -2859,7 +2859,7 @@ div#short-key-bindings-intro.well,
 #texteditor-backdrop #texteditor-container .CodeMirror-gutters {
  background: #194570;
  background-color: #194570;
- color: #1d2a35;
+ color: #ffffff;
 }
 .edit_app #menubar .navbar {
  margin-bottom: 0px;
@@ -2897,34 +2897,34 @@ div#short-key-bindings-intro.well,
  color: #ff5a00;
 }
 .terminal .xterm-color-1 {
- color: #913df2;
+ color: #ac6ef4;
 }
 .terminal .xterm-color-2 {
  color: #ff5a00;
 }
 .terminal .xterm-color-3 {
- color: #ff5a00;
+ color: #148997;
 }
 .terminal .xterm-color-4 {
- color: #913df2;
+ color: #ac6ef4;
 }
 .terminal .xterm-color-5 {
- color: #26cad3;
+ color: #f7b334;
 }
 .terminal .xterm-color-6 {
  color: #26cad3;
 }
 .terminal .xterm-color-7 {
- color: #194570;
+ color: #4b92d7;
 }
 .terminal .xterm-color-8 {
- color: #194570;
+ color: #4b92d7;
 }
 .terminal .xterm-color-9 {
- color: #26cad3;
+ color: #f7b334;
 }
 .terminal .xterm-color-10 {
- color: #ff5a00;
+ color: #148997;
 }
 .terminal .xterm-color-14 {
  color: #26cad3;
@@ -3012,7 +3012,7 @@ span.ansiblack,
 span.ansiblue,
 .ansi-blue-fg,
 .ansi-blue-intense-fg {
- color: #194570;
+ color: #4b92d7;
 }
 span.ansigray,
 .ansi-gray-fg,
@@ -3029,12 +3029,12 @@ span.ansigreen,
 span.ansipurple,
 .ansi-purple-fg,
 .ansi-purple-intense-fg {
- color: #5e0dbc;
+ color: #7611eb;
 }
 span.ansicyan,
 .ansi-cyan-fg,
 .ansi-cyan-intense-fg {
- color: #5e0dbc;
+ color: #7611eb;
 }
 span.ansiyellow,
 .ansi-yellow-fg,
@@ -3118,7 +3118,7 @@ div.tooltiptext.bigtooltip {
  width: 36px;
 }
 .cm-s-ipython .CodeMirror-linenumber {
- color: #1d2a35;
+ color: #ffffff;
 }
 .CodeMirror-sizer {
  margin-left: 40px;
@@ -3134,20 +3134,20 @@ div.CodeMirror-linenumber,
  text-align: right;
 }
 .CodeMirror-linenumber {
- color: #1d2a35;
+ color: #ffffff;
 }
 .cm-s-ipython .CodeMirror-cursor {
  border-left: 2px solid #0095ff !important;
 }
 .cm-s-ipython span.cm-comment {
- color: #148997;
+ color: #b8dbd2;
  font-style: italic;
 }
 .cm-s-ipython span.cm-atom {
- color: #913df2;
+ color: #ac6ef4;
 }
 .cm-s-ipython span.cm-number {
- color: #913df2;
+ color: #ac6ef4;
 }
 .cm-s-ipython span.cm-property {
  color: #ffffff;
@@ -3160,16 +3160,16 @@ div.CodeMirror-linenumber,
  font-weight: normal;
 }
 .cm-s-ipython span.cm-string {
- color: #26cad3;
+ color: #f7b334;
 }
 .cm-s-ipython span.cm-meta {
- color: #5e0dbc;
+ color: #7611eb;
 }
 .cm-s-ipython span.cm-operator {
- color: #ff5a00;
+ color: #148997;
 }
 .cm-s-ipython span.cm-builtin {
- color: #ff5a00;
+ color: #148997;
 }
 .cm-s-ipython span.cm-variable {
  color: #ffffff;
@@ -3181,26 +3181,26 @@ div.CodeMirror-linenumber,
  color: #ffffff;
 }
 .cm-s-ipython span.cm-def {
- color: #194570;
+ color: #4b92d7;
  font-weight: normal;
 }
 .cm-s-ipython span.cm-error {
  background: #141d25;
 }
 .cm-s-ipython span.cm-tag {
- color: #194570;
+ color: #4b92d7;
 }
 .cm-s-ipython span.cm-link {
- color: #194570;
+ color: #4b92d7;
 }
 .cm-s-ipython span.cm-storage {
- color: #913df2;
+ color: #ac6ef4;
 }
 .cm-s-ipython span.cm-entity {
- color: #194570;
+ color: #4b92d7;
 }
 .cm-s-ipython span.cm-quote {
- color: #26cad3;
+ color: #f7b334;
 }
 div.CodeMirror span.CodeMirror-matchingbracket {
  color: #f7b334;
@@ -3228,7 +3228,7 @@ div.CodeMirror span.CodeMirror-nonmatchingbracket {
  font-size: 100%;
 }
 .cm-s-default .cm-hr {
- color: #ff5a00;
+ color: #148997;
 }
 div.cell.text_cell .cm-s-default .cm-header {
  font-family: "FS Elliot", monospace;
@@ -3244,34 +3244,34 @@ div.cell.text_cell .cm-s-default span.cm-variable-3 {
  color: #ffffff !important;
 }
 .cm-s-default span.cm-comment {
- color: #148997 !important;
+ color: #b8dbd2 !important;
 }
 .cm-s-default .cm-tag {
  color: #ffffff;
 }
 .cm-s-default .cm-builtin {
- color: #ff5a00;
+ color: #148997;
 }
 .cm-s-default .cm-string {
- color: #26cad3;
+ color: #f7b334;
 }
 .cm-s-default .cm-keyword {
  color: #ff5a00;
 }
 .cm-s-default .cm-number {
- color: #913df2;
+ color: #ac6ef4;
 }
 .cm-s-default .cm-error {
- color: #913df2;
+ color: #ac6ef4;
 }
 .cm-s-default .cm-link {
- color: #194570;
+ color: #4b92d7;
 }
 .cm-s-default .cm-atom {
- color: #913df2;
+ color: #ac6ef4;
 }
 .cm-s-default .cm-def {
- color: #194570;
+ color: #4b92d7;
 }
 .CodeMirror-cursor {
  border-left: 2px solid #0095ff !important;
