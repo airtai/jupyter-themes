@@ -1,13 +1,20 @@
+@deep-blue:             #194570;
+@deep-green:            #148997;
+@teal:                  #26CAD3;
+@mint:                  #B8DBD2;
+@purple:                #460A8C;
+@grey:                  #373A3B;
+
 @orange:                #ff5a00;
-@cyan:                  #93e5e9;
-@yellow:                #f7b334; // #fdeccc;
+@cyan:                  @teal;
+@yellow:                #F7B334; // #fdeccc;
 
-@red:                   @orange; // darken(@orange, 10%);
-@magenta:               lighten(@orange, 10%);
-@violet:                darken(@orange, 10%);
+@red:                   #FF0000; // darken(@orange, 10%);
+@violet:                lighten(@purple, 20%);
+@magenta:               lighten(@violet, 20%);
 
-@blue:                  darken(@cyan, 10%);
-@green:                 lighten(@cyan, 10%);
+@blue:                  lighten(@deep-blue, 30%); // tint(@deep-blue, 20%);
+@green:                 @deep-green;
 
 @code-gray:             #808080;
 @code-fg:               #d0d0d0;
@@ -21,15 +28,17 @@
 @theme-flavor:          #000000;
 @theme-flavor-inverse:  @yellow;
 
-@base03:           #263746;
-@base02:           lighten(@base03, 5%);
-@base01:           lighten(@base03, 10%);
-@base00:           lighten(@base03, 15%);
 
-@base3:            #e6f3ff;
-@base2:            lighten(@base3, 5%);
-@base1:            lighten(@base3, 10%);
-@base0:            lighten(@base3, 15%);
+@base03:           #27445e;
+//@base03:           darken(@deep-blue, 1%);
+@base02:           darken(@base03, 3%);
+@base01:           darken(@base03, 6%);
+@base00:           darken(@base03, 9%);
+
+@base3:            #fff;
+@base2:            darken(@base3, 4%);
+@base1:            darken(@base3, 8%);
+@base0:            darken(@base3, 12%);
 
 @bg:               @base03;
 @fg:               @base3;
@@ -68,33 +77,36 @@
 @text-cell-fg:          @notebook-fg;
 @unrendered-text:       @blue;
 @header-fg:             @yellow;
+// @header-fg:             @notebook-fg;
 @tooltip-bg-color:      @base02;
 @tooltip-fg-color:      @base1;
-@nb-name-fg:            @yellow;
-@nb-name-hover:         @yellow;
+// @nb-name-fg:            @yellow;
+// @nb-name-hover:         @yellow;
+@nb-name-fg:            @notebook-fg;
+@nb-name-hover:         @notebook-fg;
 
 /* cell border colors */
-@cc-border-selected:    @red;
-@cc-border-edit:        darken(@red, 7%);
-@tc-border-selected:    @red;
-@tc-border-edit:        desaturate(@red, 20%);
+@cc-border-selected:    @orange;
+@cc-border-edit:        @orange;
+@tc-border-selected:    @orange;
+@tc-border-edit:        @orange;
 
 /* menus, dividers, prompt-borders, brackets */
 @divider:               @selected-half;
 /* cell number */
-@disabled:              @blue;
+@disabled:              @green;
 @input-prompt:          @disabled;
 @input-hover-bg:        @cc-input-bg;
 @prompt-hover-color:    @disabled;
 @prompt-line:           @cc-border-edit;
 @tc-prompt-std:         @selected-half;
 @matching-bracket:      @base03;
-@menubar-bg:            darken(@notebook-bg, 3%);
+@menubar-bg:            @base01;
 @menubar-fg:            @notebook-fg;
 @menubar-hover:         @dropdown-bg;
 @nb-header-bg:          @item-theme;
 @nb-header-fg:          @notebook-fg;
-@dropdown-bg:           @notebook-bg;
+@dropdown-bg:           @base01;
 @dropdown-border:       @selected-half;
 @dropdown-hover:        @selected-third;
 
@@ -110,19 +122,19 @@
 @cmd-palette-hover:     @panel-bg;
 
 /* buttons, widgets, kernels colors */
-@item-theme:            @base01;
+@item-theme:            @base1;
 @item-blue:             @blue;
 @item-orange:           @orange;
 @item-yellow:           @yellow;
 @item-cyan:             @cyan;
-@item-green:            @cyan;
+@item-green:            @green;
 @item-red:              @red;
 @item-danger:           @orange;
 
-@item-danger:           @red;
-@item-success:          @blue;
-@item-info:             lighten(@blue, 20%);
-@item-warning:          desaturate(@red, 20%);
+@item-danger:           @orange;
+@item-success:          @cyan;
+@item-info:             @green;
+@item-warning:          @yellow;
 
 /* tables and dataframes colors */
 @table-color:           @cc-output-fg;
@@ -139,15 +151,15 @@
 @button-bg:             @base02;
 @button-border:         @button-bg;
 @button-color:          @notebook-fg;
-@button-hover:          @base00;
+@button-hover:          @orange; // @base00;
 @button-hover-bg:       lighten(@button-bg, 2%);
 @button-hover-border:   @button-hover-bg;
-@button-focus-bg:       darken(desaturate(@red, 60%), 40%);
-@button-focus-fg:       @red;
+@button-focus-bg:       @base00;
+@button-focus-fg:       @blue;
 @button-panel-bg:       @panel-header-bg;
 @button-panel-hover:    darken(@panel-header-bg, 2%);
-@scrollbar:             @item-theme;
-@scroll-trough:         lighten(@notebook-bg, 6%);
+@scrollbar:             @deep-blue; // @item-theme;
+@scroll-trough:         @base01;
 @scrollbar-inactive:    @base1;
 @box-shadow:            #202020;
 @md-header-link:        rgba(0,0,0,.32);
@@ -168,20 +180,21 @@
 @js-error:              @ansired;
 
 /* solarized codemirror colors */
-@cm-selected:           darken(@base02, 5%);
+@cm-selected:           @base00;
 /* @cm-selected:           lighten(@blue, 20%); */
-@cm-gutters:            darken(@blue, 2%);
-@cm-linenumber:         @base03;
-@cm-atom:               @orange;
-@cm-attribute:          @orange;
-@cm-comment:            @base1;
+// @cm-gutters:            darken(@blue, 2%);
+@cm-gutters:            @deep-blue;
+@cm-linenumber:         @fg;
+@cm-atom:               @magenta;
+@cm-attribute:          @magenta;
+@cm-comment:            @mint;
 @cm-property:           @cyan;
 @cm-keyword:            @orange;
-@cm-string:             @cyan;
-@cm-number:             @cyan;
+@cm-string:             @yellow;
+@cm-number:             @magenta;
 @cm-meta:               @violet;
-@cm-operator:           @orange;
-@cm-builtin:            @orange;
+@cm-operator:           @green;
+@cm-builtin:            @green;
 @cm-variable:           @cc-input-fg;
 @cm-variable2:          @cc-input-fg;
 @cm-variable3:          @cc-input-fg;
@@ -195,12 +208,12 @@
 @cm-latex:              @notebook-fg;
 
 /* Custom notebook style */
-@nb-fa-folder-color:  @item-blue;
-@nb-folder-icon-color:  @item-blue;
-@nb-notebook-icon-color:  @item-green;
-@nb-item-icon-color:  @item-blue;
-@nb-notification-widget-color:  @item-blue;
-@nb-item-buttons-color:  @item-blue;
+@nb-fa-folder-color:  @item-green;
+@nb-folder-icon-color:  @yellow;
+@nb-notebook-icon-color:  @cyan;
+@nb-item-icon-color:  @item-orange;
+@nb-notification-widget-color:  @item-orange;
+@nb-item-buttons-color:  @item-orange;
 @menu-bg: @notebook-bg;
 @menu-fg: @notebook-fg;
 @kernel-theme: @item-theme;
@@ -215,7 +228,7 @@
 
 /* Custom terminal colors */
 div.less-rule-notebook-bg {
-    background-color: @notebook-bg;
+    background-color: @base00;
 }
 div.less-rule-notebook-fg {
     background-color: @notebook-fg;

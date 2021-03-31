@@ -78,7 +78,8 @@ def less_to_css(style_less):
         f.write(style_less)
     os.chdir(package_dir)
     style_css = lesscpy.compile(tempfile)
-    os.remove("/tmp/yacctab.py")
+    if os.path.exists("/tmp/yacctab.py"):
+        os.remove("/tmp/yacctab.py")
     style_css += '\n\n'
     return style_css
 
