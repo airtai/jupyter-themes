@@ -21,7 +21,7 @@ div.less-rule-ansiblack {
  background-color: #002647;
 }
 div.less-rule-ansired {
- background-color: #eb746a;
+ background-color: #f54738;
 }
 div.less-rule-ansigreen {
  background-color: #38c8d9;
@@ -2443,7 +2443,7 @@ span.bg-success.text-success {
 }
 span.bg-danger.text-danger {
  background-color: #002647;
- color: #eb746a;
+ color: #f54738;
 }
 .has-success .input-group-addon {
  color: #38c8d9;
@@ -2457,13 +2457,13 @@ span.bg-danger.text-danger {
  box-shadow: inset 0 1px 1px rgba(0,0,0,0.025);
 }
 .has-error .input-group-addon {
- color: #eb746a;
+ color: #f54738;
  border-color: transparent;
  background: inherit;
  background-color: rgba(192,57,67,.10);
 }
 .has-error .form-control {
- border-color: #eb746a;
+ border-color: #f54738;
  -webkit-box-shadow: inset 0 1px 1px rgba(0,0,0,0.025);
  box-shadow: inset 0 1px 1px rgba(0,0,0,0.025);
 }
@@ -2770,8 +2770,8 @@ body > div.modal.cmd-palette.in > div {
  border-radius: 0px;
 }
 #find-and-replace #replace-preview .replace .match {
- background-color: #eb746a;
- border-color: #eb746a;
+ background-color: #f54738;
+ border-color: #f54738;
  border-radius: 0px;
 }
 #find-and-replace #replace-preview .replace .insert {
@@ -3008,7 +3008,7 @@ span.ansiyellow,
 span.ansired,
 .ansi-red-fg,
 .ansi-red-intense-fg {
- color: #eb746a;
+ color: #f54738;
 }
 div.output-stderr {
  background-color: #f76f25;
@@ -3017,7 +3017,7 @@ div.output-stderr pre {
  color: #001628;
 }
 div.js-error {
- color: #eb746a;
+ color: #f54738;
 }
 .ipython_tooltip {
  font-family: monospace, monospace;
