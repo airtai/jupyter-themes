@@ -1,19 +1,20 @@
 @deep-blue:             #194570;
-@deep-green:            #148997;
-@teal:                  #26CAD3;
-@mint:                  #B8DBD2;
-@purple:                #460A8C;
+@deep-green:            #38c8d9; //148997;
+@teal:                  #3cdde6; // 26CAD3;
+@mint:                  #9dedd8; // B8DBD2;
+@deep-purple:           #9b45ff;
 @grey:                  #373A3B;
 
-@orange:                #ff5a00;
+@orange:                #f76f25;
 @cyan:                  @teal;
-@yellow:                #F7B334; // #fdeccc;
+@yellow:                #f7b334; // #fdeccc;
 
-@red:                   #FF0000; // darken(@orange, 10%);
-@violet:                lighten(@purple, 10%);
-@magenta:               lighten(@violet, 20%);
+@red:                   #eb746a; // darken(@orange, 10%);
+@purple:                lighten(@deep-purple, 0%);
+@violet:                lighten(@deep-purple, 5%);
+@magenta:               lighten(@deep-purple, 10%);
 
-@blue:                  @deep-blue;
+@blue:                  #41a1ff;
 @green:                 @deep-green;
 
 @code-gray:             #808080;
@@ -34,15 +35,15 @@
 @base03:           darken(#263746, 5%);
 @base03:           darken(@grey, 5%);
 */
-@base3:           darken(#263746, 5%);
+@base3:           darken(#002f59, 0%); // #263746
 @base2:           darken(@base3, 5%);
 @base1:           darken(@base3, 8%);
 @base0:           darken(@base3, 11%);
 
-@base03:            #fff;
-@base02:            darken(@base03, 4%);
-@base01:            darken(@base03, 8%);
-@base00:            darken(@base03, 12%);
+@base03:            #fcfcfc;
+@base02:            darken(@base03, 3%);
+@base01:            darken(@base03, 6%);
+@base00:            darken(@base03, 9%);
 
 @bg:               @base03;
 @fg:               @base3;

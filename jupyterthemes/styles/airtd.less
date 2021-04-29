@@ -1,19 +1,20 @@
 @deep-blue:             #194570;
-@deep-green:            #148997;
-@teal:                  #26CAD3;
-@mint:                  #B8DBD2;
-@purple:                #460A8C;
+@deep-green:            #38c8d9; //148997;
+@teal:                  #3cdde6; // 26CAD3;
+@mint:                  #9dedd8; // B8DBD2;
+@deep-purple:           #9b45ff;
 @grey:                  #373A3B;
 
-@orange:                #ff5a00;
+@orange:                #f76f25;
 @cyan:                  @teal;
-@yellow:                #F7B334; // #fdeccc;
+@yellow:                #f7b334; // #fdeccc;
 
-@red:                   #FF0000; // darken(@orange, 10%);
-@violet:                lighten(@purple, 20%);
-@magenta:               lighten(@violet, 20%);
+@red:                   #eb746a; // darken(@orange, 10%);
+@purple:                lighten(@deep-purple, 0%);
+@violet:                lighten(@deep-purple, 5%);
+@magenta:               lighten(@deep-purple, 10%);
 
-@blue:                  lighten(@deep-blue, 30%); // tint(@deep-blue, 20%);
+@blue:                  #41a1ff;
 @green:                 @deep-green;
 
 @code-gray:             #808080;
@@ -29,7 +30,7 @@
 @theme-flavor-inverse:  @yellow;
 
 
-@base03:           #27445e;
+@base03:           darken(#00417a, 10%);
 //@base03:           darken(@deep-blue, 1%);
 @base02:           darken(@base03, 3%);
 @base01:           darken(@base03, 6%);
