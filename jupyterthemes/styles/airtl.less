@@ -1,7 +1,7 @@
 @deep-blue:             #194570;
-@deep-green:            #38c8d9; //148997;
-@teal:                  #3cdde6; // 26CAD3;
-@mint:                  #9dedd8; // B8DBD2;
+@deep-green:            #17707a;
+@teal:                  #26CAD3;
+@mint:                  #B8DBD2;
 @deep-purple:           #9b45ff;
 @grey:                  #373A3B;
 
@@ -10,11 +10,11 @@
 @yellow:                #f7b334; // #fdeccc;
 
 @red:                   #f54738; // darken(@orange, 10%);
-@purple:                lighten(@deep-purple, 0%);
+@purple:                @deep-purple;
 @violet:                lighten(@deep-purple, 5%);
 @magenta:               lighten(@deep-purple, 10%);
 
-@blue:                  #41a1ff;
+@blue:                  #2976c2;
 @green:                 @deep-green;
 
 @code-gray:             #808080;
@@ -35,15 +35,15 @@
 @base03:           darken(#263746, 5%);
 @base03:           darken(@grey, 5%);
 */
-@base3:           darken(#002f59, 0%); // #263746
+@base3:           darken(#002f59, 1%); // #263746
 @base2:           darken(@base3, 5%);
 @base1:           darken(@base3, 8%);
 @base0:           darken(@base3, 11%);
 
-@base03:            #fcfcfc;
-@base02:            darken(@base03, 3%);
-@base01:            darken(@base03, 6%);
-@base00:            darken(@base03, 9%);
+@base03:            #f8f8f8;
+@base02:            darken(@base03, 5%);
+@base01:            darken(@base03, 8%);
+@base00:            darken(@base03, 11%);
 
 @bg:               @base03;
 @fg:               @base3;
@@ -81,8 +81,8 @@
 @cc-output-fg:          @notebook-fg;
 @text-cell-fg:          @notebook-fg;
 @unrendered-text:       @blue;
-// @header-fg:             @yellow;
-@header-fg:             @notebook-fg;
+@header-fg:             @orange;
+// @header-fg:             @notebook-fg;
 @tooltip-bg-color:      @base02;
 @tooltip-fg-color:      @base1;
 // @nb-name-fg:            @yellow;
@@ -156,7 +156,7 @@
 @button-bg:             @base02;
 @button-border:         @button-bg;
 @button-color:          @notebook-fg;
-@button-hover:          @orange; // @base00;
+@button-hover:          @mint; // @base00;
 @button-hover-bg:       lighten(@button-bg, 2%);
 @button-hover-border:   @button-hover-bg;
 @button-focus-bg:       @base00;
@@ -190,21 +190,21 @@
 // @cm-gutters:            darken(@blue, 2%);
 @cm-gutters:            @deep-blue;
 @cm-linenumber:         @bg;
-@cm-atom:               @magenta;
-@cm-attribute:          @magenta;
-@cm-comment:            darken(@mint, 20%);
-@cm-property:           @cyan;
+@cm-atom:               @blue;
+@cm-attribute:          @blue;
+@cm-comment:            @deep-green;
+@cm-property:           @blue;
 @cm-keyword:            @orange;
-@cm-string:             @cyan;
-@cm-number:             @magenta;
-@cm-meta:               @violet;
+@cm-string:             @purple;
+@cm-number:             @purple;
+@cm-meta:               @purple;
 @cm-operator:           @purple;
-@cm-builtin:            @purple;
+@cm-builtin:            @blue;
 @cm-variable:           @cc-input-fg;
 @cm-variable2:          @cc-input-fg;
 @cm-variable3:          @cc-input-fg;
 
-@cm-def:                @green;
+@cm-def:                @blue;
 @cm-error:              @cc-input-bg;
 @cm-tag:                @blue;
 @cm-link:               @blue;
@@ -213,9 +213,9 @@
 @cm-latex:              @notebook-fg;
 
 /* Custom notebook style */
-@nb-fa-folder-color:  @item-green;
-@nb-folder-icon-color:  @item-green;
-@nb-notebook-icon-color:  @purple;
+@nb-fa-folder-color:  @yellow;
+@nb-folder-icon-color:  @yellow;
+@nb-notebook-icon-color:  @blue;
 @nb-item-icon-color:  @item-orange;
 @nb-notification-widget-color:  @item-orange;
 @nb-item-buttons-color:  @item-orange;
