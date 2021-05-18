@@ -218,7 +218,7 @@ span#sort-name.btn.btn-xs.btn-default.sort-action:hover .fa {
  content: "\f15b";
  position: relative;
  top: 0px;
- color: #d6d6d6 !important;
+ color: #005299 !important;
 }
 #project_name a {
  display: inline-flex;
