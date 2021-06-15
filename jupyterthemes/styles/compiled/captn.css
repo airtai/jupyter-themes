@@ -205,7 +205,7 @@ span#sort-name.btn.btn-xs.btn-default.sort-action:hover .fa {
  content: "\f15b";
  position: relative;
  top: 0px;
- color: #d6d6d6 !important;
+ color: #5ec5ed !important;
 }
 #project_name a {
  display: inline-flex;
@@ -492,28 +492,28 @@ div#notebook {
  background-color: #003851;
  min-height: 0px;
  box-shadow: none;
- width: 980px;
+ width: 90%;
  margin-right: auto;
  margin-left: auto;
 }
 div#ipython-main-app.container {
- width: 980px;
+ width: 90%;
  margin-right: auto;
  margin-left: auto;
  margin-right: auto;
  margin-left: auto;
 }
 .container {
- width: 980px;
+ width: 90%;
  margin-right: auto;
  margin-left: auto;
 }
 div#menubar-container {
  width: 100%;
- width: 980px;
+ width: 90%;
 }
 div#header-container {
- width: 980px;
+ width: 90%;
 }
 .notebook_app #header,
 .edit_app #header {
@@ -2834,7 +2834,7 @@ div#short-key-bindings-intro.well,
  font-family: monospace, monospace;
  font-size: 11pt;
  line-height: 170%;
- color: #eae4d9;
+ color: #6faabc;
  background: #002d42;
  padding: 0.4em;
  border-radius: 2px;
@@ -2843,12 +2843,12 @@ div#short-key-bindings-intro.well,
 }
 .terminal .xterm-viewport {
  background-color: #002d42;
- color: #eae4d9;
+ color: #d5a7af;
  overflow-y: auto;
  background: #002d42;
 }
 .terminal .xterm-color-0 {
- color: #d8cdb8;
+ color: #6faabc;
 }
 .terminal .xterm-color-1 {
  color: #6faabc;
