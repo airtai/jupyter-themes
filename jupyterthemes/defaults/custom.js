@@ -100,6 +100,18 @@ for (i = 0, n = document.styleSheets.length; i < n; i++) {
     }
 }
 
+// set custom fav-icons
+requirejs([
+    'jquery',
+    'base/js/utils',
+], function($, utils
+    ){
+    favElement = document.getElementById('favicon');
+    favPath = favElement.attributes.href.value.split(".ico")[0];
+    favName = favPath.split("/").pop();
+    utils.change_favicon("custom/fav-icons/"+favName+".ico")
+});
+
 // Apply terminal theme
 terminal.term.setOption('theme', {
     foreground: lessRules['notebook-fg'],

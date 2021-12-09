@@ -50,7 +50,9 @@ def install_theme(theme=None,
                 logo=None,
                 nbname=False,
                 kernellogo=False,
-                dfonts=False):
+                dfonts=False,
+                fav_icon_dir=None
+                ):
 
     """ Install theme to jupyter_customcss with specified font, fontsize,
     md layout, and toolbar pref
@@ -111,6 +113,10 @@ def install_theme(theme=None,
     # set logo if needed
     if logo is not None:
         style_css = stylefx.set_logo(wkdir, logo, style_css)
+    
+    # copy custom fav-icons
+    if fav_icon_dir is not None:
+        stylefx.copy_fav_icons(wkdir, fav_icon_dir)
 
     # install style_css to .jupyter/custom/custom.css
     stylefx.write_final_css(style_css)
@@ -286,6 +292,12 @@ def main():
         action='store_true',
         default=False,
         help="force fonts to browser default")
+    parser.add_argument(
+        '-ficons',
+        "--fav_icon_dir",
+        action='store',
+        default=None,
+        help='custom fav icons directory')
 
     args = parser.parse_args()
     themes = get_themes()
@@ -332,4 +344,5 @@ def main():
         logo=args.logo,
         nbname=args.nbname,
         kernellogo=args.kernellogo,
-        dfonts=args.defaultfonts)
+        dfonts=args.defaultfonts,
+        fav_icon_dir=args.fav_icon_dir)
