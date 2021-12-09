@@ -249,3 +249,4 @@ jtplot.reset()
 | merriserif    | Merriweather     |
 | neutonserif   | Neuton           |
 | goudyserif    | Sorts Mill Goudy |
+

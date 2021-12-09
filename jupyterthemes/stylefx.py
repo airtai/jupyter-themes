@@ -28,6 +28,7 @@ jupyter_custom_fonts = os.path.join(jupyter_custom, 'fonts')
 jupyter_customcss = os.path.join(jupyter_custom, 'custom.css')
 jupyter_customjs = os.path.join(jupyter_custom, 'custom.js')
 jupyter_nbext = os.path.join(jupyter_data, 'nbextensions')
+jupyter_custom_fav_icon = os.path.join(jupyter_custom, 'fav-icons')
 
 # theme colors, layout, and font directories
 layouts_dir = os.path.join(package_dir, 'layout')
@@ -69,6 +70,8 @@ def check_directories():
         os.makedirs(jupyter_data)
     if not os.path.isdir(jupyter_nbext):
         os.makedirs(jupyter_nbext)
+    if not os.path.isdir(jupyter_custom_fav_icon):
+        os.makedirs(jupyter_custom_fav_icon)
 
 
 def less_to_css(style_less):
@@ -653,3 +656,19 @@ def set_logo(wkdir, logo, style_css):
     style_css = re.sub(_logo_display_none, "\n", style_css)
 
     return style_css
+
+def copy_fav_icons(wkdir, fav_icon_dir):
+    """Copy custom fav icons to the themes folder
+    """
+    if not os.path.exists(fav_icon_dir):
+        if not os.path.exists(os.path.join(wkdir, fav_icon_dir)):
+            msg = "Fav Icon folder {} does not exists".format(fav_icon_dir)
+
+            print("\n\t{}".format(msg))
+            raise msg
+        source_fav_icon_dir = os.path.join(wkdir, fav_icon_dir)
+        
+    # save to working directory
+    if os.path.exists(jupyter_custom_fav_icon):
+        for _icon in os.listdir(source_fav_icon_dir):
+            copyfile(os.path.join(source_fav_icon_dir, _icon), os.path.join(jupyter_custom_fav_icon, _icon))
