@@ -107,29 +107,41 @@ requirejs([
 ], function($, utils
     ){
     favElement = document.getElementById('favicon');
-    favPath = favElement.attributes.href.value.split(".ico")[0];
-    favName = favPath.split("/").pop();
-    utils.change_favicon("custom/fav-icons/"+favName+".ico")
+    newFavPath = favElement.attributes.href.value.replace("/static/base/images/", "custom/fav-icons/")
+    utils.change_favicon(newFavPath)
 });
 
-// Apply terminal theme
-terminal.term.setOption('theme', {
-    foreground: lessRules['notebook-fg'],
-    background: lessRules['notebook-bg'],
-    black:         lessRules['ansiblack'],
-    brightBlack:   lessRules['ansiblack'],
-    red:           lessRules['ansired'],
-    brightRed:     lessRules['ansired'],
-    green:         lessRules['ansigreen'],
-    brightGreen:   lessRules['ansigreen'],
-    yellow:        lessRules['ansiyellow'],
-    brightYellow:  lessRules['ansiyellow'],
-    blue:          lessRules['ansiblue'],
-    brightBlue:    lessRules['ansiblue'],
-    magenta:       lessRules['ansimagenta'],
-    brightMagenta: lessRules['ansimagenta'],
-    cyan:          lessRules['ansicyan'],
-    brightCyan:    lessRules['ansicyan'],
-    white:         lessRules['ansiwhite'],
-    brightWhite:   lessRules['ansiwhite'],
+// set timestamps
+requirejs([
+    'jquery',
+    'base/js/utils',
+], function($, utils
+    ){
+    ts = (new Date()).toISOString().replaceAll("-", "").replaceAll(":", "")
+    customCss = document.querySelector("link[href='/custom/custom.css']").getAttribute("href") +"?v=" + ts
+    document.querySelector("link[href='/custom/custom.css']").setAttribute("href", customCss)
 });
+
+if(typeof terminal !== 'undefined') {
+    // Apply terminal theme
+    terminal.term.setOption('theme', {
+        foreground: lessRules['notebook-fg'],
+        background: lessRules['notebook-bg'],
+        black:         lessRules['ansiblack'],
+        brightBlack:   lessRules['ansiblack'],
+        red:           lessRules['ansired'],
+        brightRed:     lessRules['ansired'],
+        green:         lessRules['ansigreen'],
+        brightGreen:   lessRules['ansigreen'],
+        yellow:        lessRules['ansiyellow'],
+        brightYellow:  lessRules['ansiyellow'],
+        blue:          lessRules['ansiblue'],
+        brightBlue:    lessRules['ansiblue'],
+        magenta:       lessRules['ansimagenta'],
+        brightMagenta: lessRules['ansimagenta'],
+        cyan:          lessRules['ansicyan'],
+        brightCyan:    lessRules['ansicyan'],
+        white:         lessRules['ansiwhite'],
+        brightWhite:   lessRules['ansiwhite'],
+    });
+}
