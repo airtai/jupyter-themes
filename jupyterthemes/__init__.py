@@ -114,9 +114,10 @@ def install_theme(theme=None,
     if logo is not None:
         style_css = stylefx.set_logo(wkdir, logo, style_css)
     
-    # copy custom fav-icons
+    # copy custom fav-icons if needed
     if fav_icon_dir is not None:
         stylefx.copy_fav_icons(wkdir, fav_icon_dir)
+        stylefx.update_custom_js() 
 
     # install style_css to .jupyter/custom/custom.css
     stylefx.write_final_css(style_css)
