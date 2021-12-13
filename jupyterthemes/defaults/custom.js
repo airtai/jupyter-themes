@@ -100,18 +100,24 @@ for (i = 0, n = document.styleSheets.length; i < n; i++) {
     }
 }
 
-// set custom fav-icons
+// set a global variable to enable/disable the custom fav icon switch
+_enableCustomFavIcons = false
+
+// set custom fav-icons on page load
 requirejs([
     'jquery',
     'base/js/utils',
 ], function($, utils
     ){
-    favElement = document.getElementById('favicon');
-    newFavPath = favElement.attributes.href.value.replace("/static/base/images/", "custom/fav-icons/")
-    utils.change_favicon(newFavPath)
+    if (_enableCustomFavIcons) {
+        favElement = document.getElementById('favicon');
+        newFavPath = favElement.attributes.href.value.replace("/static/base/images/", "custom/fav-icons/")
+        utils.change_favicon(newFavPath)
+    }
+    
 });
 
-// set timestamps
+// set timestamps on page load
 requirejs([
     'jquery',
     'base/js/utils',
@@ -121,6 +127,43 @@ requirejs([
     customCss = document.querySelector("link[href='/custom/custom.css']").getAttribute("href") +"?v=" + ts
     document.querySelector("link[href='/custom/custom.css']").setAttribute("href", customCss)
 });
+
+// Create a MutationObserver to monitor the dynamic changes to the fav icon
+requirejs([
+    'base/js/promises',
+    'base/js/utils'
+], function(promises, utils) {
+    if (_enableCustomFavIcons) {
+        // Select the node that will be observed for mutations
+        var targetNode = document.getElementsByTagName('head')[0];
+
+        // Options for the observer (which mutations to observe)
+        const config = { childList: true };
+
+        // Callback function to execute when mutations are observed
+        const callback = function(mutationsList, observer) {
+            for(const mutation of mutationsList) {
+                    if ( (mutation.addedNodes.length) && (typeof(mutation.addedNodes) === 'object') ) {
+
+                        mutation.addedNodes.forEach(function(_node) {
+                            if ( (_node.id === 'favicon') && ( _node.href.includes('/static/base/images/') ) )  {
+                                newFavPath = _node.attributes.href.value.replace("/static/base/images/", "custom/fav-icons/")
+                                utils.change_favicon(newFavPath)
+                            }
+                        })
+                    }
+            }
+        };
+
+        // Create an observer instance linked to the callback function
+        const observer = new MutationObserver(callback);
+
+        // Start observing the target node for configured mutations
+        observer.observe(targetNode, config); 
+    }
+
+});
+
 
 if(typeof terminal !== 'undefined') {
     // Apply terminal theme

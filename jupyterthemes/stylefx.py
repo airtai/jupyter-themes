@@ -672,3 +672,17 @@ def copy_fav_icons(wkdir, fav_icon_dir):
     if os.path.exists(jupyter_custom_fav_icon):
         for _icon in os.listdir(source_fav_icon_dir):
             copyfile(os.path.join(source_fav_icon_dir, _icon), os.path.join(jupyter_custom_fav_icon, _icon))
+
+def update_custom_js():
+    """set the global _enableCustomFavIcons variable to True
+    """
+    # Read in the file
+    with open(jupyter_customjs, 'r') as file :
+        filedata = file.read()
+
+    # Replace the target string
+    filedata = filedata.replace("_enableCustomFavIcons = false", "_enableCustomFavIcons = true")
+
+    # Write the file out again
+    with open(jupyter_customjs, 'w') as file:
+        file.write(filedata)
