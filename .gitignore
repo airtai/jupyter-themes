@@ -71,3 +71,4 @@ dist/
 
 venv/
 .vscode/
+env/

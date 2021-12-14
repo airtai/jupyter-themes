@@ -9,6 +9,8 @@ import lesscpy
 from PIL import Image
 from jupyter_core.paths import jupyter_config_dir, jupyter_data_dir
 
+from pathlib import Path
+
 # path to local site-packages/jupyterthemes
 package_dir = os.path.dirname(os.path.realpath(__file__))
 
@@ -660,19 +662,28 @@ def set_logo(wkdir, logo, style_css):
 def copy_fav_icons(wkdir, fav_icon_dir):
     """Copy custom fav icons to the themes folder
     """
-    if not os.path.exists(fav_icon_dir):
-        if not os.path.exists(os.path.join(wkdir, fav_icon_dir)):
-            msg = "Fav Icon folder {} does not exists".format(fav_icon_dir)
+    _source_fav_icon_path = Path(wkdir) / fav_icon_dir
 
-            print("\n\t{}".format(msg))
-            raise msg
-        source_fav_icon_dir = os.path.join(wkdir, fav_icon_dir)
+    required_fav_icons = ["favicon-busy-1.ico","favicon-busy-2.ico","favicon-busy-3.ico","favicon-file.ico","favicon-notebook.ico","favicon-terminal.ico","favicon.ico"]
+
+    # Check if the source folder exists
+    assert _source_fav_icon_path.exists(), f"The source directory '{_source_fav_icon_path}' does not exist."
+    
+    
+    # Check if all the required icon files are present in the source directory before copying to jupyter root directory
+    for name in required_fav_icons:
+        f = Path( _source_fav_icon_path ) / name
+        assert f.exists(), f"The icon file '{f}' does not exist in the {_source_fav_icon_path}."
+
+    # copy icons from source directory to jupyter root working directory
+    if Path(jupyter_custom_fav_icon).exists():
+        for _icon in Path( _source_fav_icon_path ).iterdir():
+            if _icon.is_file():
+                _source = Path( _source_fav_icon_path ) / _icon.name
+                _dest = Path( jupyter_custom_fav_icon ) / _icon.name
+                copyfile(_source, _dest)
         
-    # save to working directory
-    if os.path.exists(jupyter_custom_fav_icon):
-        for _icon in os.listdir(source_fav_icon_dir):
-            copyfile(os.path.join(source_fav_icon_dir, _icon), os.path.join(jupyter_custom_fav_icon, _icon))
-
+    
 def update_custom_js():
     """set the global _enableCustomFavIcons variable to True
     """
