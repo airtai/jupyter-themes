@@ -124,8 +124,16 @@ requirejs([
 ], function($, utils
     ){
     ts = (new Date()).toISOString().replaceAll("-", "").replaceAll(":", "")
+    
+    // setting timestamp for custom css
     customCss = document.querySelector("link[href='/custom/custom.css']").getAttribute("href") +"?v=" + ts
     document.querySelector("link[href='/custom/custom.css']").setAttribute("href", customCss)
+    
+    // Setting timestamp for logo
+    logoElement = document.querySelector("div#ipython_notebook > a > img")
+    newlogoURL =  "custom/logo.png?v="+ ts
+    logoElement.style.backgroundImage="url("+newlogoURL+")";
+    
 });
 
 // Create a MutationObserver to monitor the dynamic changes to the fav icon
