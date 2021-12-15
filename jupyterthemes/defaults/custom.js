@@ -128,6 +128,11 @@ requirejs([
     // setting timestamp for custom css
     customCss = document.querySelector("link[href='/custom/custom.css']").getAttribute("href") +"?v=" + ts
     document.querySelector("link[href='/custom/custom.css']").setAttribute("href", customCss)
+    
+    // Setting timestamp for logo
+    logoElement = document.querySelector("div#ipython_notebook > a > img")
+    newLogoWithTimestamp = utils.url_path_join(utils.get_body_data('baseUrl'), "custom/logo.png?v=" + ts );
+    logoElement.style.backgroundImage="url("+newLogoWithTimestamp+")";
         
 });
 
