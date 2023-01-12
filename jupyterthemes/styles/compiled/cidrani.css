@@ -2230,6 +2230,9 @@ div.widget_item.btn-group > button.btn.btn-default.widget-combo-btn:hover {
  font-size: inherit;
  z-index: 0;
 }
+div.jupyter-widgets {
+ color: #202020 !important;
+}
 div.jupyter-widgets.widget-hprogress.widget-hbox {
  display: inline-table !important;
  width: 38% !important;
