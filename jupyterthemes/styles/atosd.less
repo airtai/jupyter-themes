@@ -31,7 +31,7 @@
 
 
 // @base03:           darken(#00417a, 7%);
-@base03:           #282828;
+@base03:           #383838;
 @base02:           darken(@base03, 2%);
 @base01:           darken(@base03, 4%);
 @base00:           darken(@base03, 5%);
@@ -181,21 +181,21 @@
 @js-error:              @ansired;
 
 /* solarized codemirror colors */
-@cm-selected:           @base00;
+@cm-selected:           darken(@blue, 10%);
 /* @cm-selected:           lighten(@blue, 20%); */
 // @cm-gutters:            darken(@blue, 2%);
 @cm-gutters:            lighten(@blue, 10%);
 @cm-linenumber:         @fg;
-@cm-atom:               @magenta;
+@cm-atom:               lighten(@blue, 10%);//@magenta;
 @cm-attribute:          @purple;
 @cm-comment:            @teal;
 @cm-property:           @cyan;
-@cm-keyword:            lighten(@purple, 10%);
+@cm-keyword:            lighten(@blue, 10%);//lighten(@purple, 10%);
 @cm-string:             @mint;
 @cm-number:             @violet;
 @cm-meta:               @violet;
 @cm-operator:           lighten(@blue, 10%);
-@cm-builtin:            lighten(@purple, 10%);
+@cm-builtin:            lighten(@blue, 10%); //lighten(@purple, 10%);
 @cm-variable:           @cc-input-fg;
 @cm-variable2:          @cc-input-fg;
 @cm-variable3:          @cc-input-fg;
@@ -211,7 +211,7 @@
 /* Custom notebook style */
 @nb-fa-folder-color:  @deep-green;
 @nb-folder-icon-color:  @deep-green;
-@nb-notebook-icon-color:  @deep-blue;
+@nb-notebook-icon-color:  @blue;
 @nb-item-icon-color:  @item-orange;
 @nb-notification-widget-color:  @item-orange;
 @nb-item-buttons-color:  @item-orange;
